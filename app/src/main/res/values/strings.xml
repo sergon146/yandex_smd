@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Coiny</string>
+
+    <string name="connection_error">No Internet connection available!</string>
+
+    <string name="loading_error">An error occurred while loading!</string>
+</resources>
