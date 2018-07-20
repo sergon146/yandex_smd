@@ -3,6 +3,8 @@ package com.sergon146.business.contracts;
 
 import com.sergon146.business.model.Balance;
 
+import java.util.List;
+
 import io.reactivex.Observable;
 
 /**
@@ -11,5 +13,5 @@ import io.reactivex.Observable;
  */
 
 public interface BalanceUseCase {
-    Observable<Balance> getBalance();
+    Observable<List<Balance>> getBalance();
 }

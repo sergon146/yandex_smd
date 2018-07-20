@@ -4,6 +4,8 @@ import com.sergon146.business.contracts.BalanceUseCase;
 import com.sergon146.business.model.Balance;
 import com.sergon146.business.repository.BalanceRepository;
 
+import java.util.List;
+
 import io.reactivex.Observable;
 
 /**
@@ -20,8 +22,7 @@ public class BalanceUseCaseImpl implements BalanceUseCase {
     }
 
     @Override
-    public Observable<Balance> getBalance() {
-        //todo get balance
-        return null;
+    public Observable<List<Balance>> getBalance() {
+        return balanceRepository.getBalance();
     }
 }

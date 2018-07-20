@@ -1,8 +1,12 @@
 package com.sergon146.core.repository;
 
 import com.sergon146.business.model.Balance;
+import com.sergon146.business.model.Currency;
 import com.sergon146.business.repository.BalanceRepository;
 import com.sergon146.core.api.ApiService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import io.reactivex.Observable;
 
@@ -12,7 +16,6 @@ import io.reactivex.Observable;
  */
 
 public class BalanceRepositoryImpl implements BalanceRepository {
-    private static final int FIRST_PAGE = 1;
 
     private final ApiService apiService;
 
@@ -21,7 +24,18 @@ public class BalanceRepositoryImpl implements BalanceRepository {
     }
 
     @Override
-    public Observable<Balance> getBalance() {
-        return null;
+    public Observable<List<Balance>> getBalance() {
+
+        double currentBalance = 12000.00;
+        double exchangeRate = 63.60;
+
+        List<Balance> balancesHardcode = new ArrayList<>();
+        Balance rub = new Balance(currentBalance, Currency.RUBLE);
+        Balance usd = new Balance(currentBalance / exchangeRate, Currency.DOLLAR);
+
+        balancesHardcode.add(rub);
+        balancesHardcode.add(usd);
+
+        return Observable.just(balancesHardcode);
     }
 }

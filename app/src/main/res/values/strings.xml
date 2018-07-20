@@ -4,4 +4,8 @@
     <string name="connection_error">No Internet connection available!</string>
 
     <string name="loading_error">An error occurred while loading!</string>
+    <string name="empty_operations">На данный момент операции отсутствуют!</string>
+
+    <string name="current_balance">Текущий баланс:</string>
+    <string name="currency_value">%1$s %2$s</string>
 </resources>

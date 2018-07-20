@@ -15,6 +15,14 @@ public class BalancePresenter extends BasePresenter<BalanceView> {
     }
 
     @Override
+    public void attachView(BalanceView view) {
+        super.attachView(view);
+        bind(onUi(useCase.getBalance()).subscribe(bal -> {
+            getViewState().showBalance(bal);
+        }));
+    }
+
+    @Override
     protected String getScreenTag() {
         return "BalancePresenter";
     }
