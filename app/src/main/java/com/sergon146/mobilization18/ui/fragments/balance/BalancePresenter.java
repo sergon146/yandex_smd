@@ -26,4 +26,8 @@ public class BalancePresenter extends BasePresenter<BalanceView> {
     protected String getScreenTag() {
         return "BalancePresenter";
     }
+
+    public void showSettings() {
+        getRouter().showSettingsScreen();
+    }
 }

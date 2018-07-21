@@ -12,4 +12,6 @@
 
     <color name="toolbar_background">#45000000</color>
 
+    <color name="settings_item_bg">#d9d9d9</color>
+
 </resources>

@@ -3,18 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    >
+    android:layout_gravity="center">
 
     <com.wang.avi.AVLoadingIndicatorView
         style="@style/AVLoadingIndicatorView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_margin="12dp"
         android:background="@drawable/bordered_circle"
         android:padding="8dp"
-        android:layout_margin="12dp"
         app:indicatorColor="@color/colorPrimary"
-        app:indicatorName="BallClipRotateMultipleIndicator"
-        />
+        app:indicatorName="BallClipRotateMultipleIndicator" />
 </FrameLayout>

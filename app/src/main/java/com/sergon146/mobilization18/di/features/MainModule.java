@@ -4,6 +4,7 @@ import com.sergon146.business.contracts.MainUseCase;
 import com.sergon146.business.usecase.MainUseCaseImpl;
 import com.sergon146.mobilization18.navigation.MainRouter;
 import com.sergon146.mobilization18.ui.fragments.balance.BalanceFragment;
+import com.sergon146.mobilization18.ui.fragments.settings.SettingsFragment;
 import com.sergon146.mobilization18.ui.main.MainPresenter;
 
 import dagger.Module;
@@ -29,4 +30,7 @@ public abstract class MainModule {
 
     @ContributesAndroidInjector(modules = BalanceModule.class)
     abstract BalanceFragment contributeBalanceFragment();
+
+    @ContributesAndroidInjector(modules = SettingsModule.class)
+    abstract SettingsFragment contributeSettingsFragment();
 }

@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
@@ -23,6 +22,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class BalanceFragment extends BaseMvpFragment<BalancePresenter>
         implements BalanceView, Injectable {
@@ -33,7 +33,6 @@ public class BalanceFragment extends BaseMvpFragment<BalancePresenter>
 
     @BindView(R.id.wallet_recycler)
     RecyclerView walletRecycler;
-
 
     public static BalanceFragment getInstance() {
         return new BalanceFragment();
@@ -50,9 +49,10 @@ public class BalanceFragment extends BaseMvpFragment<BalancePresenter>
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.balance_fragment, container, false);
+        View root = inflater.inflate(R.layout.fragment_balance, container, false);
         ButterKnife.bind(this, root);
         prepareViews();
+        setActionBarTitle(R.string.balance_title);
         return root;
     }
 
@@ -61,6 +61,11 @@ public class BalanceFragment extends BaseMvpFragment<BalancePresenter>
         walletRecycler.setHasFixedSize(true);
         walletRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         walletRecycler.setAdapter(adapter);
+    }
+
+    @OnClick(R.id.settings)
+    void onSettingsClick() {
+        getPresenter().showSettings();
     }
 
     @Override
