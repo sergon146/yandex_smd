@@ -7,5 +7,6 @@ package com.sergon146.mobilization18.navigation;
 
 public enum Screens {
     MAIN_SCREEN,
-    DETAIL_SCREEN
+    SETTINGS_SCREEN,
+    ABOUT;
 }

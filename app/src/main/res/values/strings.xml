@@ -8,4 +8,11 @@
 
     <string name="current_balance">Текущий баланс:</string>
     <string name="currency_value">%1$s %2$s</string>
+
+    <string name="default_wallet">Основная валюта</string>
+
+
+    <string name="balance_title">Кошелёк</string>
+    <string name="settings_title">Настройки</string>
+    <string name="about_app">О приложении</string>
 </resources>

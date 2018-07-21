@@ -4,10 +4,10 @@ import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
 
+import com.sergon146.business.repository.BalanceRepository;
 import com.sergon146.core.Core;
 import com.sergon146.core.api.ApiService;
 import com.sergon146.core.repository.BalanceRepositoryImpl;
-import com.sergon146.business.repository.BalanceRepository;
 import com.sergon146.mobilization18.ui.main.MainActivity;
 
 import javax.inject.Singleton;

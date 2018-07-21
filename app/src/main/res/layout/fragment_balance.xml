@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/balance_title"
@@ -20,8 +17,7 @@
             android:text="@string/current_balance"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/wallet_recycler"
@@ -31,8 +27,7 @@
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/balance_title"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/balance_title" />
 
         <ImageView
             android:id="@+id/empty_operation_img"
@@ -42,8 +37,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/wallet_recycler"
-            app:srcCompat="@drawable/ic_ufo"
-            />
+            app:srcCompat="@drawable/ic_ufo" />
 
         <TextView
             android:id="@+id/empty_operation_title"
@@ -59,8 +53,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/empty_operation_img"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/empty_operation_img" />
 
         <ImageView
             android:id="@+id/settings"
@@ -70,7 +63,6 @@
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_settings"
-            />
+            app:srcCompat="@drawable/ic_settings" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

@@ -10,6 +10,10 @@ import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
  */
 @StateStrategyType(SkipStrategy.class)
 public interface BaseMvpView extends MvpView {
+    void setActionBarTitle(int stringId);
+
+    void setActionBarTitle(String title);
+
     void showToast(int stringId);
 
     void showToast(String string);
