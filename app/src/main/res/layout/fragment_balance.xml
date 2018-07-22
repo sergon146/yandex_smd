@@ -38,7 +38,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/wallet_recycler"
-            app:srcCompat="@drawable/ic_ufo" />
+            app:srcCompat="@drawable/ic_not_found" />
 
         <TextView
             android:id="@+id/empty_operation_title"

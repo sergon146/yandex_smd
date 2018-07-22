@@ -12,7 +12,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_ufo" />
+        app:srcCompat="@drawable/ic_connection_lost" />
 
     <TextView
         android:id="@+id/title"
