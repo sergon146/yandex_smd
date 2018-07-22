@@ -1,0 +1,23 @@
+apply plugin: 'checkstyle'
+preBuild.dependsOn('checkstyleMain')
+
+checkstyle {
+    toolVersion = '8.4'
+}
+
+tasks.withType(Checkstyle) {
+    configFile file("${project.rootDir}/checkstyle/checkstyle_config.xml")
+    classpath = files()
+    source "${project.projectDir}"
+}
+
+task checkstyleMain(type: Checkstyle) {
+    include '**/*.java'
+    exclude '**/gen/**'
+    exclude '**/build/**'
+    exclude '**/R.java'
+    exclude '**/BuildConfig.java'
+    exclude '**/assets/**'
+    exclude '*.xml'
+    classpath = files()
+}

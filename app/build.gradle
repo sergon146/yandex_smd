@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply from: "${project.rootDir}/gradlemodules/helper.gradle"
+apply from: "${project.rootDir}/gradlemodules/checkstyle.gradle"
 
 android {
     compileSdkVersion 27
@@ -107,3 +108,5 @@ dependencies {
     //stetho
     implementation 'com.facebook.stetho:stetho:1.5.0'
 }
+
+

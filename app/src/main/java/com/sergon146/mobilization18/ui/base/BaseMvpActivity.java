@@ -19,7 +19,7 @@ import ru.terrakok.cicerone.NavigatorHolder;
 
 /**
  * Created by Sergon146 on 08.04.2018.
- * <sergon146@gmail.com>
+ * sergon146@gmail.com
  */
 
 public abstract class BaseMvpActivity<Presenter extends BasePresenter> extends InjectableActivity

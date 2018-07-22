@@ -16,7 +16,7 @@ import io.reactivex.disposables.Disposable;
  * - процесс наблюдения и отписки от потока {@link #bind}
  * - управление потоком вывода результата {@link #onUi}
  * Created by Sergon146 on 08.04.2018.
- * <sergon146@gmail.com>
+ * sergon146@gmail.com
  */
 public abstract class BaseSchedulablePresenter<View extends MvpView> extends MvpPresenter<View> {
     private final CompositeDisposable viewDisposable = new CompositeDisposable();
@@ -33,7 +33,10 @@ public abstract class BaseSchedulablePresenter<View extends MvpView> extends Mvp
                 break;
             case PER_UI:
                 uiDisposable.add(disposable);
+                break;
             default:
+                viewDisposable.add(disposable);
+                break;
         }
     }
 

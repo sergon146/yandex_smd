@@ -1,5 +1,6 @@
 package com.sergon146.mobilization18.ui.components;
 
+import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +13,13 @@ import java.util.Queue;
  * @since 19.04.2018
  */
 
-public abstract class RecycledPageAdapter<VH extends RecycledPageAdapter.ViewHolder> extends PagerAdapter {
+public abstract class RecycledPageAdapter<VH extends RecycledPageAdapter.ViewHolder>
+        extends PagerAdapter {
     Queue<VH> destroyedItems = new LinkedList<>();
 
+    @NonNull
     @Override
-    public final Object instantiateItem(ViewGroup container, int position) {
+    public final Object instantiateItem(@NonNull ViewGroup container, int position) {
         VH viewHolder = destroyedItems.poll();
 
         if (viewHolder != null) {
@@ -32,13 +35,13 @@ public abstract class RecycledPageAdapter<VH extends RecycledPageAdapter.ViewHol
     }
 
     @Override
-    public final void destroyItem(ViewGroup container, int position, Object object) {
+    public final void destroyItem(ViewGroup container, int position, @NonNull Object object) {
         container.removeView(((VH) object).itemView);
         destroyedItems.add((VH) object);
     }
 
     @Override
-    public final boolean isViewFromObject(View view, Object object) {
+    public final boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
         return ((VH) object).itemView == view;
     }
 
@@ -46,7 +49,7 @@ public abstract class RecycledPageAdapter<VH extends RecycledPageAdapter.ViewHol
 
     public abstract void onBindViewHolder(VH viewHolder, int position);
 
-    public static abstract class ViewHolder {
+    public abstract static class ViewHolder {
         protected final View itemView;
 
         public ViewHolder(View itemView) {
