@@ -6,6 +6,8 @@ import com.sergon146.business.model.Transaction;
 import com.sergon146.business.repository.BalanceRepository;
 import com.sergon146.business.repository.TransactionRepository;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import io.reactivex.Observable;
@@ -37,7 +39,7 @@ public class BalanceUseCaseImpl implements BalanceUseCase {
     }
 
     @Override
-    public Observable<Long> getTransactionSumm() {
-        return transactionRepository.getTransactionSum();
+    public Observable<Long> getTransactionSum() {
+        return transactionRepository.getTransactionSum(Collections.<Transaction>emptyList());
     }
 }
