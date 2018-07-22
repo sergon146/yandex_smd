@@ -28,9 +28,8 @@ public class NetworkUtil {
 
             NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
             if (activeNetwork != null) {
-                if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI
-                        || activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE)
-                    return false;
+                return activeNetwork.getType() != ConnectivityManager.TYPE_WIFI
+                        && activeNetwork.getType() != ConnectivityManager.TYPE_MOBILE;
             }
             return true;
         } catch (Exception e) {
