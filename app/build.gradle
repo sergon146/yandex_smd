@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply from: "${project.rootDir}/gradlemodules/helper.gradle"
 
 android {
     compileSdkVersion 27
@@ -6,12 +7,14 @@ android {
         applicationId "com.sergon146.mobilization18"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        versionCode VERSION_CODE
+        versionName "$VERSION_MAJOR.$VERSION_MINOR.$VERSION_BUILD"
+
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         resValue "string", "pixbay_base_url", (project.findProperty("PIXBAY_BASE_URL") ?: "")
         resValue "string", "pixbay_api_key", (project.findProperty("PIXBAY_API_KEY") ?: "")
+        resValue "string", "developer_email", (project.findProperty("DEVELOPER_EMAIL") ?: "")
     }
     buildTypes {
         release {

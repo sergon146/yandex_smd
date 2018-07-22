@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#9c9c9c</color>
-    <color name="colorPrimaryDark">#787878</color>
+    <color name="colorPrimary">#66bb66</color>
+    <color name="colorPrimaryDark">#4caf50</color>
     <color name="colorAccent">#e71942</color>
 
     <color name="main_color">#ffd43e</color>
@@ -12,6 +12,5 @@
 
     <color name="toolbar_background">#45000000</color>
 
-    <color name="settings_item_bg">#d9d9d9</color>
-
+    <color name="main_item_bg">#7bc77b</color>
 </resources>

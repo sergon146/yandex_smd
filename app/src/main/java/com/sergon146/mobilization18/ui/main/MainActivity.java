@@ -11,6 +11,7 @@ import com.sergon146.mobilization18.R;
 import com.sergon146.mobilization18.navigation.MainRouter;
 import com.sergon146.mobilization18.navigation.Screens;
 import com.sergon146.mobilization18.ui.base.BaseMvpActivity;
+import com.sergon146.mobilization18.ui.fragments.about.AboutFragment;
 import com.sergon146.mobilization18.ui.fragments.balance.BalanceFragment;
 import com.sergon146.mobilization18.ui.fragments.settings.SettingsFragment;
 
@@ -63,8 +64,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
             case SETTINGS_SCREEN:
                 return SettingsFragment.getInstance();
             case ABOUT:
-                //todo add about screen
-                return null;
+                return AboutFragment.getInstance();
             default:
                 throw new RuntimeException("Unknown screen");
         }
