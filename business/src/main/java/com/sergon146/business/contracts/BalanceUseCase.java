@@ -18,5 +18,5 @@ public interface BalanceUseCase {
 
     Observable<List<Transaction>> getTransactions();
 
-    Observable<Long> getTransactionSumm();
+    Observable<Long> getTransactionSum();
 }

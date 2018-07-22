@@ -2,6 +2,7 @@ package com.sergon146.core.repository;
 
 import com.sergon146.business.model.Transaction;
 import com.sergon146.business.model.types.Currency;
+import com.sergon146.business.model.types.OperationType;
 import com.sergon146.business.repository.TransactionRepository;
 import com.sergon146.core.api.ApiService;
 
@@ -28,17 +29,22 @@ public class TransactionRepositoryImpl implements TransactionRepository {
     }
 
     @Override
-    public Observable<Long> getTransactionSum() {
-        return getTransaction().map(item -> {
-            long sum = 0;
-            for (Transaction transaction : item) {
-                if (currentCurrency.equals(transaction.getCurrency())) {
-                    sum += transaction.getAmount();
-                } else {
-                    sum += transaction.getAmount() / transaction.getExchangeRate();
-                }
+    public Observable<Long> getTransactionSum(List<Transaction> transactions) {
+        long sum = 0;
+        for (Transaction transaction : transactions) {
+            double amount;
+            if (currentCurrency.equals(transaction.getCurrency())) {
+                amount = transaction.getAmount();
+            } else {
+                amount = transaction.getAmount() / transaction.getExchangeRate();
             }
-            return sum;
-        });
+
+            if (transaction.getType() == OperationType.INPUT) {
+                sum += amount;
+            } else {
+                sum -= amount;
+            }
+        }
+        return Observable.just(sum);
     }
 }

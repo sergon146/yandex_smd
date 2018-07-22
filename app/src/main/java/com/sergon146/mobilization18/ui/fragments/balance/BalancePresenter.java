@@ -20,7 +20,7 @@ public class BalancePresenter extends BasePresenter<BalanceView> {
         bind(onUi(useCase.getBalance()).subscribe(bal ->
                 getViewState().showBalance(bal)));
 
-        bind(onUi(useCase.getTransactionSumm()).subscribe(sum ->
+        bind(onUi(useCase.getTransactionSum()).subscribe(sum ->
                 getViewState().showToast(sum + "")));
     }
 
