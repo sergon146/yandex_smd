@@ -1,4 +1,4 @@
-package com.sergon146.business.model;
+package com.sergon146.business.model.types;
 
 public enum Currency {
     RUBLE("рубль", "₽", "RUB"),

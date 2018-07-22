@@ -17,9 +17,11 @@ public class BalancePresenter extends BasePresenter<BalanceView> {
     @Override
     public void attachView(BalanceView view) {
         super.attachView(view);
-        bind(onUi(useCase.getBalance()).subscribe(bal -> {
-            getViewState().showBalance(bal);
-        }));
+        bind(onUi(useCase.getBalance()).subscribe(bal ->
+                getViewState().showBalance(bal)));
+
+        bind(onUi(useCase.getTransactionSumm()).subscribe(sum ->
+                getViewState().showToast(sum + "")));
     }
 
     @Override
