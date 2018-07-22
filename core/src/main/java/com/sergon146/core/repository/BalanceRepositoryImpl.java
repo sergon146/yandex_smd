@@ -1,7 +1,7 @@
 package com.sergon146.core.repository;
 
 import com.sergon146.business.model.Balance;
-import com.sergon146.business.model.Currency;
+import com.sergon146.business.model.types.Currency;
 import com.sergon146.business.repository.BalanceRepository;
 import com.sergon146.core.api.ApiService;
 
