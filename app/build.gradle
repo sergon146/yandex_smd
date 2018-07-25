@@ -3,6 +3,15 @@ apply from: "${project.rootDir}/gradlemodules/helper.gradle"
 apply from: "${project.rootDir}/gradlemodules/checkstyle.gradle"
 
 android {
+    signingConfigs {
+        release {
+            keyAlias 'pokecoin'
+            keyPassword System.getenv("KEY_PASSWORD")
+            storeFile file('../keystore/pokecoin.jks')
+            storePassword System.getenv("STORE_PASSWORD")
+        }
+    }
+
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.sergon146.mobilization18"
@@ -19,6 +28,7 @@ android {
     }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled true
             multiDexEnabled true
             shrinkResources true
@@ -31,7 +41,6 @@ android {
             useProguard false
         }
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -44,8 +53,7 @@ ext.DAGGER_VERSION = "2.15"
 dependencies {
     implementation project(path: ':core')
     implementation project(path: ':business')
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
@@ -68,7 +76,6 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:2.11.0'
     androidTestImplementation 'org.mockito:mockito-android:2.7.22'
     testImplementation 'junit:junit:4.12'
-
     //moxy
     implementation "com.arello-mobile:moxy:${MOXY_VERSION}"
     annotationProcessor "com.arello-mobile:moxy-compiler:${MOXY_VERSION}"
@@ -85,7 +92,7 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     //image loading
     implementation 'com.facebook.fresco:fresco:1.9.0'
-    implementation "com.facebook.fresco:imagepipeline-okhttp3:1.9.0"
+    implementation 'com.facebook.fresco:imagepipeline-okhttp3:1.9.0'
     //progress bars
     implementation 'com.wang.avi:library:2.1.3'
     // tools - serialization etc.
