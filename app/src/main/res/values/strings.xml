@@ -1,7 +1,30 @@
 <resources>
-    <string name="app_name">Coiny</string>
+    <string name="app_name">Pokecoin</string>
+    <string name="about_title">Pokecoin - Your financial tracker</string>
 
-    <string name="connection_error">No Internet connection available!</string>
+    <string name="connection_error">There is no connection to the Internet!</string>
 
-    <string name="loading_error">An error occurred while loading!</string>
+    <string name="loading_error">An error occurred while loading</string>
+    <string name="empty_operations">At the moment there are no operations!</string>
+
+    <string name="current_balance">Current balance:</string>
+    <string name="currency_value">%1$s %2$s</string>
+
+    <string name="default_wallet">Base currency</string>
+
+    <string name="about_version">App version: %1$s</string>
+
+    <string name="balance_title">Wallet</string>
+    <string name="settings_title">Settings</string>
+
+    <string name="about_app">About app</string>
+    <string name="feedback">Report a problem</string>
+    <string name="email_title">Feedback</string>
+    <string name="email_sending">Send email</string>
+    <string name="mail_apps_not_available">No apps available to send email</string>
+
+    <string name="copytight_this_year">Copyright 2018 © sergon146</string>
+    <string name="copytight">Copyright 2018–%1$d © sergon146</string>
+
+    <string name="rubel_short">RUB</string>
 </resources>

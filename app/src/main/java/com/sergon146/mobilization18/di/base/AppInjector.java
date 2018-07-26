@@ -88,8 +88,9 @@ public class AppInjector {
                     .registerFragmentLifecycleCallbacks(
                             new FragmentManager.FragmentLifecycleCallbacks() {
                                 @Override
-                                public void onFragmentAttached(final FragmentManager fm, final Fragment
-                                        f, final Context context) {
+                                public void onFragmentAttached(final FragmentManager fm,
+                                                               final Fragment f,
+                                                               final Context context) {
                                     if (BuildConfig.DEBUG && f instanceof LogNamed) {
                                         logger.onFragmentOpened((LogNamed) f);
                                     }

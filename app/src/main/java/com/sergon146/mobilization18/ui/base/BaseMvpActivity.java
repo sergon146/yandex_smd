@@ -19,11 +19,11 @@ import ru.terrakok.cicerone.NavigatorHolder;
 
 /**
  * Created by Sergon146 on 08.04.2018.
- * <sergon146@gmail.com>
+ * sergon146@gmail.com
  */
 
 public abstract class BaseMvpActivity<Presenter extends BasePresenter> extends InjectableActivity
-    implements BaseMvpView {
+        implements BaseMvpView {
 
     private static final String LOG_TAG = "BaseActivity";
     private final NavigateInjector navigateInjector = new NavigateInjector();
@@ -79,6 +79,16 @@ public abstract class BaseMvpActivity<Presenter extends BasePresenter> extends I
     @Override
     public void showToast(String string) {
         Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void setActionBarTitle(int stringId) {
+        setActionBarTitle(getString(stringId));
+    }
+
+    @Override
+    public void setActionBarTitle(String title) {
+        setTitle(title);
     }
 
     @Override

@@ -1,22 +1,18 @@
 package com.sergon146.business.model;
 
+import com.sergon146.business.model.types.Currency;
+
 public class Balance {
-    private long count;
-    private OperationType operationType;
+    private double amount;
     private Currency currency;
 
-    public Balance(long count, OperationType operationType, Currency currency) {
-        this.count = count;
-        this.operationType = operationType;
+    public Balance(double amount, Currency currency) {
+        this.amount = amount;
         this.currency = currency;
     }
 
-    public long getCount() {
-        return count;
-    }
-
-    public OperationType getOperationType() {
-        return operationType;
+    public double getValue() {
+        return amount;
     }
 
     public Currency getCurrency() {

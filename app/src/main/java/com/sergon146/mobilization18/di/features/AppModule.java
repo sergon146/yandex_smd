@@ -4,10 +4,12 @@ import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
 
+import com.sergon146.business.repository.BalanceRepository;
+import com.sergon146.business.repository.TransactionRepository;
 import com.sergon146.core.Core;
 import com.sergon146.core.api.ApiService;
 import com.sergon146.core.repository.BalanceRepositoryImpl;
-import com.sergon146.business.repository.BalanceRepository;
+import com.sergon146.core.repository.TransactionRepositoryImpl;
 import com.sergon146.mobilization18.ui.main.MainActivity;
 
 import javax.inject.Singleton;
@@ -44,8 +46,14 @@ public abstract class AppModule {
 
     @Singleton
     @Provides
-    static BalanceRepository provideParentControlRepository(ApiService apiService) {
+    static BalanceRepository provideBalanceRepository(ApiService apiService) {
         return new BalanceRepositoryImpl(apiService);
+    }
+
+    @Singleton
+    @Provides
+    static TransactionRepository provideTransactionRepository(ApiService apiService) {
+        return new TransactionRepositoryImpl(apiService);
     }
 
     @ContributesAndroidInjector(modules = {MainModule.class})

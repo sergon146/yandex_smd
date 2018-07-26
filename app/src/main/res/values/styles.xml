@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -10,14 +10,28 @@
 
     <style name="AppTheme.Launcher">
         <item name="android:windowBackground">@drawable/splash_screen</item>
-        <item name="colorPrimaryDark">@android:color/white</item>
     </style>
 
-    <style name="TextStyle">
+    <style name="TextStyleDark">
         <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/charcoal_grey</item>
+    </style>
+
+    <style name="TextStyleDark.Bold" parent="TextStyleDark">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextStyleLight">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextStyleLight.Bold" parent="TextStyleLight">
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 
     <style name="WhiteTitle">

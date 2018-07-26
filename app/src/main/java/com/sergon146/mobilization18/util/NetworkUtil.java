@@ -20,7 +20,7 @@ public class NetworkUtil {
     public static boolean isLostConnection(Context context) {
         try {
             ConnectivityManager cm = (ConnectivityManager) context
-                .getSystemService(Context.CONNECTIVITY_SERVICE);
+                    .getSystemService(Context.CONNECTIVITY_SERVICE);
 
             if (cm == null) {
                 return true;
@@ -28,9 +28,8 @@ public class NetworkUtil {
 
             NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
             if (activeNetwork != null) {
-                if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI
-                    || activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE)
-                    return false;
+                return activeNetwork.getType() != ConnectivityManager.TYPE_WIFI
+                        && activeNetwork.getType() != ConnectivityManager.TYPE_MOBILE;
             }
             return true;
         } catch (Exception e) {

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.widget.Toast;
 
 import com.sergon146.mobilization18.R;
@@ -18,7 +19,7 @@ import com.sergon146.mobilization18.di.base.InjectableFragment;
  */
 
 public abstract class BaseMvpFragment<Presenter extends BasePresenter> extends InjectableFragment
-    implements BaseMvpView, Injectable, LogNamed {
+        implements BaseMvpView, Injectable, LogNamed {
 
     private Presenter presenter;
 
@@ -45,6 +46,19 @@ public abstract class BaseMvpFragment<Presenter extends BasePresenter> extends I
 
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         getActivity().registerReceiver(receiver, filter);
+    }
+
+    @Override
+    public void setActionBarTitle(int stringId) {
+        setActionBarTitle(getString(stringId));
+    }
+
+    @Override
+    public void setActionBarTitle(String title) {
+        FragmentActivity activity = getActivity();
+        if (activity != null) {
+            activity.setTitle(title);
+        }
     }
 
     @Override
