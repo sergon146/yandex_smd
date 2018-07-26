@@ -2,6 +2,13 @@
     <string name="app_name">Pokecoin</string>
     <string name="about_title">Pokecoin - Ваш финансовый трекер</string>
 
+    <!--Navigation-->
+    <string name="tab_main">Главная</string>
+    <string name="tab_feed">Лента</string>
+    <string name="tab_report">Отчёты</string>
+    <string name="tab_profile">Профиль</string>
+    <!--Navigation-->
+
     <string name="connection_error">Отсутствует подключение к Сети Интернет!</string>
 
     <string name="loading_error">При загрузке произошла ошибка</string>

@@ -100,6 +100,7 @@ dependencies {
     annotationProcessor "org.parceler:parceler:1.0.3"
     //navigation
     implementation 'ru.terrakok.cicerone:cicerone:2.1.0'
+    implementation 'com.aurelhubert:ahbottomnavigation:2.1.0'
     //the holy grail
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
     implementation 'com.github.pwittchen:reactivenetwork-rx2:0.12.3'
