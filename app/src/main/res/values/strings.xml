@@ -2,6 +2,14 @@
     <string name="app_name">Pokecoin</string>
     <string name="about_title">Pokecoin - Your financial tracker</string>
 
+
+    <!--Navigation-->
+    <string name="tab_main">Main</string>
+    <string name="tab_feed">Feed</string>
+    <string name="tab_report">Reports</string>
+    <string name="tab_profile">Profile</string>
+    <!--Navigation-->
+
     <string name="connection_error">There is no connection to the Internet!</string>
 
     <string name="loading_error">An error occurred while loading</string>

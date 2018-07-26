@@ -5,10 +5,14 @@
     <color name="colorAccent">#e71942</color>
 
     <color name="main_color">#ffd43e</color>
-
-    <color name="charcoal_grey">#404b50</color>
-    <color name="white">#ffffff</color>
     <color name="transparent">#00000000</color>
+
+    <color name="slate">#3d4958</color>
+    <color name="rosy_pink">#f36263</color>
+    <color name="charcoal_grey">#404b50</color>
+
+    <color name="white">#ffffff</color>
+    <color name="white_50">#7fffffff</color>
 
     <color name="toolbar_background">#45000000</color>
 

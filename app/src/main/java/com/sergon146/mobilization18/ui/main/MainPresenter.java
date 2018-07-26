@@ -3,6 +3,7 @@ package com.sergon146.mobilization18.ui.main;
 import com.arellomobile.mvp.InjectViewState;
 import com.sergon146.business.contracts.MainUseCase;
 import com.sergon146.mobilization18.navigation.MainRouter;
+import com.sergon146.mobilization18.navigation.Screens;
 import com.sergon146.mobilization18.ui.base.BasePresenter;
 
 /**
@@ -27,5 +28,32 @@ public class MainPresenter extends BasePresenter<MainView> {
     @Override
     protected String getScreenTag() {
         return "MainPresenter";
+    }
+
+    public void onTabClicked(int position, boolean wasSelected) {
+        if (wasSelected) {
+            getRouter().goBackToRoot();
+            return;
+        }
+
+        switch (TabBarScreens.values()[position]) {
+            case MAIN:
+                getRouter().showNavMenu(Screens.MAIN_SCREEN);
+                break;
+            case FEED:
+                getRouter().showNavMenu(Screens.FEED_SCREEN);
+                break;
+            case REPORT:
+                getRouter().showNavMenu(Screens.REPORT_SCREEN);
+                break;
+            case PROFILE:
+                getRouter().showNavMenu(Screens.PROFILE_SCREEN);
+                break;
+            default:
+        }
+    }
+
+    public void showInitialScreen() {
+        getRouter().showInitScreen(Screens.MAIN_SCREEN);
     }
 }
