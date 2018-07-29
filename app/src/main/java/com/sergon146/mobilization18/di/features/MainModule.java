@@ -4,6 +4,7 @@ import com.sergon146.business.contracts.MainUseCase;
 import com.sergon146.business.usecase.MainUseCaseImpl;
 import com.sergon146.mobilization18.navigation.MainRouter;
 import com.sergon146.mobilization18.ui.fragments.about.AboutFragment;
+import com.sergon146.mobilization18.ui.fragments.addtransaction.AddTransactionDialog;
 import com.sergon146.mobilization18.ui.fragments.balance.BalanceFragment;
 import com.sergon146.mobilization18.ui.fragments.settings.SettingsFragment;
 import com.sergon146.mobilization18.ui.fragments.transactions.TransactionsFragment;
@@ -45,4 +46,7 @@ public abstract class MainModule {
 
     @ContributesAndroidInjector(modules = WalletModule.class)
     abstract WalletFragment contributeWalletFragment();
+
+    @ContributesAndroidInjector(modules = AddTransactionModule.class)
+    abstract AddTransactionDialog contributeAddTransactionDialog();
 }

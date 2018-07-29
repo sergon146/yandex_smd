@@ -11,15 +11,18 @@
     <string name="tab_profile">Profile</string>
     <!--Navigation-->
 
+    <!--General-->
+    <string name="connection_error">There is no connection to the Internet!</string>
+    <string name="loading_error">An error occurred while loading</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <!--General-->
+
     <string name="total_balance">Total balance</string>
 
-    <string name="connection_error">There is no connection to the Internet!</string>
-
-    <string name="loading_error">An error occurred while loading</string>
     <string name="empty_operations">At the moment there are no operations!</string>
 
     <string name="current_balance">Current wallet:</string>
-    <string name="currency_value">%1$s %2$s</string>
 
     <string name="default_wallet">Base currency</string>
 
@@ -27,13 +30,12 @@
 
     <string name="balance_title">Wallet</string>
     <string name="settings_title">Settings</string>
+    <string name="email_title">Feedback</string>
 
     <string name="balance">Balance</string>
-    <string name="amount">%1$s %2$s</string>
 
     <string name="about_app">About app</string>
     <string name="feedback">Report a problem</string>
-    <string name="email_title">Feedback</string>
     <string name="email_sending">Send email</string>
     <string name="mail_apps_not_available">No apps available to send email</string>
 
@@ -42,6 +44,7 @@
 
     <string name="rubel_short">RUB</string>
 
+    <string name="add_transaction_title">Add transaction</string>
 
     <!--Wallet type-->
     <string name="wallet_cash">Cash</string>
@@ -62,4 +65,19 @@
     <string name="clothing">Clothing</string>
     <string name="other">Other</string>
     <!--Transaction category-->
+
+    <!--Add transaction screen-->
+    <string name="amount_title">Amount</string>
+    <string name="operation_title">Operation type</string>
+    <string name="currency_title">Currency</string>
+    <string name="category_title">Category type</string>
+    <string name="wallet_title">Wallet</string>
+    <string name="empty_amount_toast">Amount cannot be zero!</string>
+    <!--Add transaction screen-->
+
+    <!--Utils-->
+    <string name="currency_value">%1$s %2$s</string>
+    <string name="amount">%1$s %2$s</string>
+    <string name="details">%1$s (%2$s)</string>
+    <!--Utils-->
 </resources>

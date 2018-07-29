@@ -1,10 +1,10 @@
 package com.sergon146.business.model.types;
 
 public enum TransactionCategory {
+    OTHER,
     PRODUCTS,
-    COMMUNAL,
     TRANSPORT,
     EATING,
-    CLOTHING,
-    OTHER
+    COMMUNAL,
+    CLOTHING
 }

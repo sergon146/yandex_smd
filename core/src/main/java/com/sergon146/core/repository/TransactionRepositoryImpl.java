@@ -11,12 +11,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Observable;
+import io.reactivex.subjects.BehaviorSubject;
+import io.reactivex.subjects.Subject;
 
 public class TransactionRepositoryImpl implements TransactionRepository {
     private final ApiService apiService;
     private final Currency currentCurrency = Currency.RUBLE;
 
     private List<Transaction> transactions;
+    private Subject<List<Transaction>> transactionSubj = BehaviorSubject.create();
 
     public TransactionRepositoryImpl(ApiService apiService) {
         this.apiService = apiService;
@@ -25,12 +28,13 @@ public class TransactionRepositoryImpl implements TransactionRepository {
         for (int i = 0; i < 10; i++) {
             transactions.add(Transaction.getRandomTransaction());
         }
+
+        transactionSubj.onNext(transactions);
     }
 
     @Override
     public Observable<List<Transaction>> getTransaction() {
-
-        return Observable.just(transactions);
+        return transactionSubj;
     }
 
     @Override
@@ -52,5 +56,11 @@ public class TransactionRepositoryImpl implements TransactionRepository {
             }
         }
         return Observable.just(sum);
+    }
+
+    @Override
+    public void addTransaction(Transaction transaction) {
+        transactions.add(transaction);
+        transactionSubj.onNext(transactions);
     }
 }

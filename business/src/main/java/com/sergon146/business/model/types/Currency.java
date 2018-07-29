@@ -2,7 +2,8 @@ package com.sergon146.business.model.types;
 
 public enum Currency {
     RUBLE("₽", "RUB"),
-    DOLLAR("$", "USD");
+    DOLLAR("$", "USD"),
+    YEN("¥", "YEN");
 
     private final String symbol;
     private final String shortName;

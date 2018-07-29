@@ -59,4 +59,8 @@ public class MainRouter extends BaseRouter {
     public void showInitScreen(Screens screen) {
         applyCommand(new Forward(String.valueOf(screen), null));
     }
+
+    public void showAddTransaction() {
+        applyCommand(new Forward(Screens.ADD_TRANSACTION.name(), null));
+    }
 }

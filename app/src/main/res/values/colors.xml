@@ -29,9 +29,10 @@
     <color name="walletLight">#27cae8</color>
 
     <color name="main_bg">#d2cfe6e7</color>
+    <color name="fab_inactive">#7c7777</color>
 
     <!--Operation type color-->
     <color name="income">#4CAF50</color>
-    <color name="expense">#ffcc0000</color>
+    <color name="expense">#cc0000</color>
     <!--Operation type color-->
 </resources>

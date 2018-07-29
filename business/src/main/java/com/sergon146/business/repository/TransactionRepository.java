@@ -11,4 +11,6 @@ public interface TransactionRepository {
     Observable<List<Transaction>> getTransaction();
 
     Observable<BigDecimal> getTransactionSum(List<Transaction> transactions);
+
+    void addTransaction(Transaction transaction);
 }

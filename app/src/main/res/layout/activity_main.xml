@@ -85,7 +85,7 @@
     </android.support.v7.widget.Toolbar>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/add_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
@@ -98,6 +98,15 @@
         app:layout_constraintTop_toBottomOf="@+id/container"
         app:layout_constraintVertical_bias="0.100000024"
         app:srcCompat="@drawable/ic_add"
+        />
+
+    <android.support.constraint.Group
+        android:id="@+id/tab_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="add_fab,tab_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
 </android.support.constraint.ConstraintLayout>
