@@ -115,6 +115,9 @@ dependencies {
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     //stetho
     implementation 'com.facebook.stetho:stetho:1.5.0'
+    //pretty views
+    implementation 'org.fabiomsr:moneytextview:1.1.0'
+    implementation 'com.github.bhargavms:PodSLider:1.2.0'
 }
 
 

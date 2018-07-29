@@ -6,6 +6,9 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.TextView;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -21,6 +24,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 public class AboutFragment extends BaseMvpFragment<AboutPresenter>
@@ -34,6 +38,8 @@ public class AboutFragment extends BaseMvpFragment<AboutPresenter>
     TextView version;
     @BindView(R.id.copyright)
     TextView copyright;
+
+    private RotateAnimation rotate;
 
     public static AboutFragment getInstance() {
         return new AboutFragment();
@@ -63,6 +69,15 @@ public class AboutFragment extends BaseMvpFragment<AboutPresenter>
         copyright.setText(currentYear == Const.APP_YEAR
                 ? getString(R.string.copytight_this_year)
                 : getString(R.string.copytight, currentYear));
+    }
+
+    @OnClick(R.id.logo)
+    void onClick(View view) {
+        RotateAnimation rotate = new RotateAnimation(0, 360,
+                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        rotate.setDuration(2000);
+        rotate.setInterpolator(new LinearInterpolator());
+        view.startAnimation(rotate);
     }
 
     @Override

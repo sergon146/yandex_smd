@@ -1,16 +1,19 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@drawable/main_gradient_bg</item>
     </style>
 
     <style name="AppTheme.Launcher">
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
+
+    <!--Text styles-->
 
     <style name="TextStyleDark">
         <item name="android:textSize">18sp</item>

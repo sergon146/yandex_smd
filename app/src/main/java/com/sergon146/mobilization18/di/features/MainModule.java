@@ -6,6 +6,8 @@ import com.sergon146.mobilization18.navigation.MainRouter;
 import com.sergon146.mobilization18.ui.fragments.about.AboutFragment;
 import com.sergon146.mobilization18.ui.fragments.balance.BalanceFragment;
 import com.sergon146.mobilization18.ui.fragments.settings.SettingsFragment;
+import com.sergon146.mobilization18.ui.fragments.transactions.TransactionsFragment;
+import com.sergon146.mobilization18.ui.fragments.wallet.WalletFragment;
 import com.sergon146.mobilization18.ui.main.MainPresenter;
 
 import dagger.Module;
@@ -37,4 +39,10 @@ public abstract class MainModule {
 
     @ContributesAndroidInjector(modules = AboutModule.class)
     abstract AboutFragment contributeAboutFragment();
+
+    @ContributesAndroidInjector(modules = TransactionsModule.class)
+    abstract TransactionsFragment contributeTransactionsFragment();
+
+    @ContributesAndroidInjector(modules = WalletModule.class)
+    abstract WalletFragment contributeWalletFragment();
 }

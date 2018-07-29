@@ -15,7 +15,7 @@ import java.util.Queue;
 
 public abstract class RecycledPageAdapter<VH extends RecycledPageAdapter.ViewHolder>
         extends PagerAdapter {
-    Queue<VH> destroyedItems = new LinkedList<>();
+    private Queue<VH> destroyedItems = new LinkedList<>();
 
     @NonNull
     @Override

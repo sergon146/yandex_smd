@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#66bb66</color>
-    <color name="colorPrimaryDark">#4caf50</color>
+    <color name="colorPrimary">#4982f3</color>
+    <color name="colorPrimaryDark">#5544f6</color>
     <color name="colorAccent">#e71942</color>
+
+    <color name="colorPrimaryHalf">#804982f3</color>
+    <color name="colorPrimaryDarkHalf">#805544f6</color>
+
+    <color name="add">#00fd7b</color>
 
     <color name="main_color">#ffd43e</color>
     <color name="transparent">#00000000</color>
@@ -12,9 +17,21 @@
     <color name="charcoal_grey">#404b50</color>
 
     <color name="white">#ffffff</color>
-    <color name="white_50">#7fffffff</color>
+    <color name="white_50">#5fffffff</color>
+    <color name="white_75">#beffffff</color>
 
     <color name="toolbar_background">#45000000</color>
 
-    <color name="main_item_bg">#7bc77b</color>
+    <color name="main_item_bg">@color/colorPrimary</color>
+
+
+    <color name="walletDark">#5549f6</color>
+    <color name="walletLight">#27cae8</color>
+
+    <color name="main_bg">#d2cfe6e7</color>
+
+    <!--Operation type color-->
+    <color name="income">#4CAF50</color>
+    <color name="expense">#ffcc0000</color>
+    <!--Operation type color-->
 </resources>

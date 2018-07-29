@@ -6,6 +6,7 @@ import com.sergon146.business.model.types.OperationType;
 import com.sergon146.business.repository.TransactionRepository;
 import com.sergon146.core.api.ApiService;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,34 +16,39 @@ public class TransactionRepositoryImpl implements TransactionRepository {
     private final ApiService apiService;
     private final Currency currentCurrency = Currency.RUBLE;
 
+    private List<Transaction> transactions;
+
     public TransactionRepositoryImpl(ApiService apiService) {
         this.apiService = apiService;
+
+        transactions = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            transactions.add(Transaction.getRandomTransaction());
+        }
     }
 
     @Override
     public Observable<List<Transaction>> getTransaction() {
-        List<Transaction> transactions = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            transactions.add(Transaction.getRandomTransaction());
-        }
+
         return Observable.just(transactions);
     }
 
     @Override
-    public Observable<Long> getTransactionSum(List<Transaction> transactions) {
-        long sum = 0;
+    public Observable<BigDecimal> getTransactionSum(List<Transaction> transactions) {
+        BigDecimal sum = BigDecimal.ZERO;
         for (Transaction transaction : transactions) {
-            double amount;
+            BigDecimal amount;
             if (currentCurrency.equals(transaction.getCurrency())) {
                 amount = transaction.getAmount();
             } else {
-                amount = transaction.getAmount() / transaction.getExchangeRate();
+                amount = transaction.getAmount().divide(transaction.getExchangeRate(),
+                        BigDecimal.ROUND_HALF_UP);
             }
 
-            if (transaction.getType() == OperationType.INPUT) {
-                sum += amount;
+            if (transaction.getType() == OperationType.INCOME) {
+                sum = sum.add(amount);
             } else {
-                sum -= amount;
+                sum = sum.subtract(amount);
             }
         }
         return Observable.just(sum);

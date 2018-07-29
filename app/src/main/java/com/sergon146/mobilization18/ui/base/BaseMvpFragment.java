@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.widget.Toast;
 
 import com.sergon146.mobilization18.R;
@@ -55,9 +54,9 @@ public abstract class BaseMvpFragment<Presenter extends BasePresenter> extends I
 
     @Override
     public void setActionBarTitle(String title) {
-        FragmentActivity activity = getActivity();
+        BaseMvpActivity activity = (BaseMvpActivity) getActivity();
         if (activity != null) {
-            activity.setTitle(title);
+            activity.setActionBarTitle(title);
         }
     }
 

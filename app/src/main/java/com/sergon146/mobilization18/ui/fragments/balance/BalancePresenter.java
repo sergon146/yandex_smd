@@ -1,7 +1,5 @@
 package com.sergon146.mobilization18.ui.fragments.balance;
 
-import android.util.Log;
-
 import com.arellomobile.mvp.InjectViewState;
 import com.sergon146.business.contracts.BalanceUseCase;
 import com.sergon146.mobilization18.navigation.MainRouter;
@@ -17,21 +15,23 @@ public class BalancePresenter extends BasePresenter<BalanceView> {
     }
 
     @Override
-    public void attachView(BalanceView view) {
-        super.attachView(view);
+    protected void onFirstViewAttach() {
+        super.onFirstViewAttach();
+
         bind(onUi(useCase.getBalance()).subscribe(bal ->
                 getViewState().showBalance(bal)));
 
-        bind(onUi(useCase.getTransactionSum()).subscribe(sum -> Log.d(getScreenTag(),
-                String.format("Transaction sum: %1$d", sum))));
+        bind(onUi(useCase.getWallets()).subscribe(wallets ->
+                getViewState().showWallets(wallets)));
+    }
+
+
+    public void showSettings() {
+        getRouter().showSettingsScreen();
     }
 
     @Override
     protected String getScreenTag() {
         return "BalancePresenter";
-    }
-
-    public void showSettings() {
-        getRouter().showSettingsScreen();
     }
 }

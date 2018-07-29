@@ -6,10 +6,12 @@ import android.content.res.Resources;
 
 import com.sergon146.business.repository.BalanceRepository;
 import com.sergon146.business.repository.TransactionRepository;
+import com.sergon146.business.repository.WalletRepository;
 import com.sergon146.core.Core;
 import com.sergon146.core.api.ApiService;
 import com.sergon146.core.repository.BalanceRepositoryImpl;
 import com.sergon146.core.repository.TransactionRepositoryImpl;
+import com.sergon146.core.repository.WalletRepositoryImpl;
 import com.sergon146.mobilization18.ui.main.MainActivity;
 
 import javax.inject.Singleton;
@@ -54,6 +56,12 @@ public abstract class AppModule {
     @Provides
     static TransactionRepository provideTransactionRepository(ApiService apiService) {
         return new TransactionRepositoryImpl(apiService);
+    }
+
+    @Singleton
+    @Provides
+    static WalletRepository provideWalletRepository() {
+        return new WalletRepositoryImpl();
     }
 
     @ContributesAndroidInjector(modules = {MainModule.class})

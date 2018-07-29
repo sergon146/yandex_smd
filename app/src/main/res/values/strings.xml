@@ -6,16 +6,19 @@
     <!--Navigation-->
     <string name="tab_main">Main</string>
     <string name="tab_feed">Feed</string>
+    <string name="tab_transparent"> </string>
     <string name="tab_report">Reports</string>
     <string name="tab_profile">Profile</string>
     <!--Navigation-->
+
+    <string name="total_balance">Total balance</string>
 
     <string name="connection_error">There is no connection to the Internet!</string>
 
     <string name="loading_error">An error occurred while loading</string>
     <string name="empty_operations">At the moment there are no operations!</string>
 
-    <string name="current_balance">Current balance:</string>
+    <string name="current_balance">Current wallet:</string>
     <string name="currency_value">%1$s %2$s</string>
 
     <string name="default_wallet">Base currency</string>
@@ -24,6 +27,9 @@
 
     <string name="balance_title">Wallet</string>
     <string name="settings_title">Settings</string>
+
+    <string name="balance">Balance</string>
+    <string name="amount">%1$s %2$s</string>
 
     <string name="about_app">About app</string>
     <string name="feedback">Report a problem</string>
@@ -35,4 +41,25 @@
     <string name="copytight">Copyright 2018–%1$d © sergon146</string>
 
     <string name="rubel_short">RUB</string>
+
+
+    <!--Wallet type-->
+    <string name="wallet_cash">Cash</string>
+    <string name="wallet_debit_card">Debit card</string>
+    <string name="wallet_credit_card">Credit card</string>
+    <!--Wallet type-->
+
+    <!--Operation type-->
+    <string name="income">Income</string>
+    <string name="expense">Expense</string>
+    <!--Operation type-->
+
+    <!--Transaction category-->
+    <string name="products">Products</string>
+    <string name="communal">Communal</string>
+    <string name="transport">Transport</string>
+    <string name="eating">Eating</string>
+    <string name="clothing">Clothing</string>
+    <string name="other">Other</string>
+    <!--Transaction category-->
 </resources>

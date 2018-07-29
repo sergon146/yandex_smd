@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
+import android.view.View;
+import android.widget.TextView;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
@@ -17,6 +18,7 @@ import com.sergon146.mobilization18.ui.base.BaseMvpActivity;
 import com.sergon146.mobilization18.ui.fragments.about.AboutFragment;
 import com.sergon146.mobilization18.ui.fragments.balance.BalanceFragment;
 import com.sergon146.mobilization18.ui.fragments.settings.SettingsFragment;
+import com.sergon146.mobilization18.ui.fragments.transactions.TransactionsFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * @author Sergon146 (sergon146@gmail.com).
@@ -44,6 +47,11 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
     @InjectPresenter
     MainPresenter presenter;
 
+    @BindView(R.id.back)
+    View back;
+    @BindView(R.id.title)
+    TextView title;
+
     @Override
     @ProvidePresenter
     protected MainPresenter providePresenter() {
@@ -57,7 +65,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
         ButterKnife.bind(this);
 
         getSupportFragmentManager().addOnBackStackChangedListener(this);
-        shouldDisplayHomeUp();
+        shouldDisplayBack();
 
         if (savedInstanceState == null) {
             showInitialScreen();
@@ -97,7 +105,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
         tabBar.setBehaviorTranslationEnabled(false);
         tabBar.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);
         tabBar.setDefaultBackgroundColor(ContextCompat.getColor(this, R.color.slate));
-        tabBar.setAccentColor(ContextCompat.getColor(this, R.color.colorPrimary));
+        tabBar.setAccentColor(ContextCompat.getColor(this, R.color.main_color));
         tabBar.setInactiveColor(ContextCompat.getColor(this, R.color.white_50));
         tabBar.setNotificationBackgroundColorResource(R.color.rosy_pink);
         tabBar.setOnTabSelectedListener((position, wasSelected) -> {
@@ -116,6 +124,11 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
     }
 
     @Override
+    public void setActionBarTitle(String title) {
+        this.title.setText(title);
+    }
+
+    @Override
     protected int getNavigationContainerId() {
         return R.id.container;
     }
@@ -129,13 +142,13 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
                 fragment = BalanceFragment.getInstance();
                 break;
             case FEED_SCREEN:
-                fragment = BalanceFragment.getInstance();
+                fragment = TransactionsFragment.getInstance();
                 break;
             case REPORT_SCREEN:
-                fragment = BalanceFragment.getInstance();
+                fragment = SettingsFragment.getInstance();
                 break;
             case PROFILE_SCREEN:
-                fragment = BalanceFragment.getInstance();
+                fragment = AboutFragment.getInstance();
                 break;
             case SETTINGS_SCREEN:
                 fragment = SettingsFragment.getInstance();
@@ -146,26 +159,23 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
             default:
                 throw new RuntimeException("Unknown screen");
         }
+
         return fragment;
     }
 
     @Override
     public void onBackStackChanged() {
-        shouldDisplayHomeUp();
+        shouldDisplayBack();
     }
 
-    public void shouldDisplayHomeUp() {
+    public void shouldDisplayBack() {
         boolean canback = getSupportFragmentManager().getBackStackEntryCount() > 1;
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(canback);
-        }
+        back.setVisibility(canback ? View.VISIBLE : View.GONE);
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        getSupportFragmentManager().popBackStack();
-        return true;
+    @OnClick(R.id.back)
+    void onBackClick() {
+        getPresenter().goBack();
     }
 
     @Override

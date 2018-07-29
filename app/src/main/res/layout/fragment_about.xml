@@ -13,7 +13,7 @@
         >
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/logo"
             android:layout_width="128dp"
             android:layout_height="128dp"
             android:layout_marginStart="8dp"
@@ -32,7 +32,7 @@
 
         <TextView
             android:id="@+id/textView"
-            style="@style/TextStyleDark"
+            style="@style/TextStyleLight"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -45,12 +45,12 @@
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/logo"
             />
 
         <TextView
             android:id="@+id/version"
-            style="@style/TextStyleDark"
+            style="@style/TextStyleLight"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -67,7 +67,7 @@
 
         <TextView
             android:id="@+id/copyright"
-            style="@style/TextStyleDark"
+            style="@style/TextStyleLight"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -75,7 +75,7 @@
             android:layout_marginTop="80dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:gravity="center"
             android:text="@string/copytight"
             android:textSize="14sp"
