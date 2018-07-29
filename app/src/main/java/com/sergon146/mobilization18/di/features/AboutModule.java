@@ -18,7 +18,7 @@ public abstract class AboutModule {
 
     @Provides
     static AboutPresenter provideAboutPresenter(MainRouter router,
-                                                  SettingsUseCase useCase) {
+                                                SettingsUseCase useCase) {
         return new AboutPresenter(router, useCase);
     }
 }

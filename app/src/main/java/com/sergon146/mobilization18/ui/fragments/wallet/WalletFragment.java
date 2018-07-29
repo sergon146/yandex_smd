@@ -46,18 +46,18 @@ public class WalletFragment extends BaseMvpFragment<WalletPresenter>
 
     private TransactionAdapter transactionAdapter;
 
-    @Override
-    @ProvidePresenter
-    protected WalletPresenter providePresenter() {
-        return presenter;
-    }
-
     public static WalletFragment newInstance(UUID walletUuid) {
         Bundle bundle = new Bundle();
         bundle.putSerializable(UUID_KEY, walletUuid);
         WalletFragment fragment = new WalletFragment();
         fragment.setArguments(bundle);
         return fragment;
+    }
+
+    @Override
+    @ProvidePresenter
+    protected WalletPresenter providePresenter() {
+        return presenter;
     }
 
     @Nullable

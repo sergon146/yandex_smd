@@ -2,7 +2,6 @@ package com.sergon146.business.usecase;
 
 import com.sergon146.business.contracts.TransactionsUseCase;
 import com.sergon146.business.model.Transaction;
-import com.sergon146.business.model.Wallet;
 import com.sergon146.business.repository.TransactionRepository;
 import com.sergon146.business.repository.WalletRepository;
 

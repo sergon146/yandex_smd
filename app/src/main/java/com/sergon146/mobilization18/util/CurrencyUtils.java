@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 public class CurrencyUtils {
-    
+
     public static String getAmoutText(BigDecimal amount) {
         DecimalFormat decimalFormat = new DecimalFormat("#.00");
         return decimalFormat.format(amount);

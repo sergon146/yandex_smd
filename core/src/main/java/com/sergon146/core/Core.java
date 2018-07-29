@@ -31,15 +31,13 @@ public class Core {
     private static Core instance;
     private ApiService apiService;
     private String endpoint;
-    private String apiKey;
 
-    public static Core initInstance(String endpoint, String apiKey) {
+    public static Core initInstance(String endpoint) {
         if (instance == null) {
             instance = new Core();
         }
 
         instance.endpoint = endpoint;
-        instance.apiKey = apiKey;
         return instance;
     }
 
@@ -81,9 +79,7 @@ public class Core {
             Request original = chain.request();
             HttpUrl originalHttpUrl = original.url();
 
-            HttpUrl url = originalHttpUrl.newBuilder()
-                    .addQueryParameter("key", apiKey)
-                    .build();
+            HttpUrl url = originalHttpUrl.newBuilder().build();
 
             Request.Builder requestBuilder = original.newBuilder().url(url);
 

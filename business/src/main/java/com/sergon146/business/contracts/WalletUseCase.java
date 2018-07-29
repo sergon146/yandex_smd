@@ -6,7 +6,6 @@ import com.sergon146.business.model.Wallet;
 import java.util.List;
 import java.util.UUID;
 
-import io.reactivex.Completable;
 import io.reactivex.Observable;
 
 public interface WalletUseCase {

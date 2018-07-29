@@ -22,8 +22,7 @@ android {
 
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        resValue "string", "pixbay_base_url", (project.findProperty("PIXBAY_BASE_URL") ?: "")
-        resValue "string", "pixbay_api_key", (project.findProperty("PIXBAY_API_KEY") ?: "")
+        resValue "string", "exchange_base_url", (project.findProperty("EXCHANGE_BASE_URL") ?: "")
         resValue "string", "developer_email", (project.findProperty("DEVELOPER_EMAIL") ?: "")
     }
     buildTypes {

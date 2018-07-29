@@ -1,7 +1,6 @@
 package com.sergon146.mobilization18.util;
 
 import android.os.Build;
-import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
 
 public class Utils {
