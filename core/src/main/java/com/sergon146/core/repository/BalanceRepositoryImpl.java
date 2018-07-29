@@ -9,6 +9,8 @@ import java.math.BigDecimal;
 import java.util.Random;
 
 import io.reactivex.Observable;
+import io.reactivex.subjects.BehaviorSubject;
+import io.reactivex.subjects.Subject;
 
 /**
  * @author Sergon146 (sergon146@gmail.com).
@@ -18,14 +20,18 @@ import io.reactivex.Observable;
 public class BalanceRepositoryImpl implements BalanceRepository {
 
     private final ApiService apiService;
+    private Balance balance;
+    private Subject<Balance> balanceSubj = BehaviorSubject.create();
 
     public BalanceRepositoryImpl(ApiService apiService) {
         this.apiService = apiService;
+        balance = getMockBalance();
+        balanceSubj.onNext(balance);
     }
 
     @Override
     public Observable<Balance> getBalance() {
-        return Observable.just(getMockBalance());
+        return balanceSubj;
     }
 
     private Balance getMockBalance() {

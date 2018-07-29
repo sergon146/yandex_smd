@@ -56,4 +56,8 @@ public class MainPresenter extends BasePresenter<MainView> {
     public void showInitialScreen() {
         getRouter().showInitScreen(Screens.MAIN_SCREEN);
     }
+
+    public void showAddTransaction() {
+        getRouter().showAddTransaction();
+    }
 }

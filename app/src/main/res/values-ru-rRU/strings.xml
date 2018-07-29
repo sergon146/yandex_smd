@@ -12,18 +12,22 @@
 
     <string name="total_balance">Общий баланс</string>
 
+    <!--General-->
     <string name="connection_error">Отсутствует подключение к Сети Интернет!</string>
-
     <string name="loading_error">При загрузке произошла ошибка</string>
+    <string name="done">Готово</string>
+    <string name="cancel">Отмена</string>
+    <!--General-->
+
     <string name="empty_operations">На данный момент операции отсутствуют!</string>
 
     <string name="current_balance">Текущий баланс:</string>
-    <string name="currency_value">%1$s %2$s</string>
 
     <string name="default_wallet">Основная валюта</string>
 
     <string name="about_version">Версия приложения: %1$s</string>
 
+    <string name="add_transaction_title">Добавление операции</string>
 
     <string name="balance_title">Кошелёк</string>
     <string name="settings_title">Настройки</string>
@@ -36,7 +40,6 @@
 
 
     <string name="balance">Баланс</string>
-    <string name="amount">%1$s %2$s</string>
     <string name="copytight_this_year">Copyright 2018 © sergon146</string>
     <string name="copytight">Copyright 2018–%1$d © sergon146</string>
 
@@ -62,4 +65,19 @@
     <string name="clothing">Одежда</string>
     <string name="other">Другое</string>
     <!--Transaction category-->
+
+    <!--Add transaction screen-->
+    <string name="amount_title">Сумма</string>
+    <string name="operation_title">Тип операции</string>
+    <string name="currency_title">Валюта</string>
+    <string name="category_title">Категория</string>
+    <string name="wallet_title">Кошелёк</string>
+    <string name="empty_amount_toast">Сумма не может быть равно нулю!</string>
+    <!--Add transaction screen-->
+
+    <!--Utils-->
+    <string name="currency_value">%1$s %2$s</string>
+    <string name="amount">%1$s %2$s</string>
+    <string name="details">%1$s (%2$s)</string>
+    <!--Utils-->
 </resources>

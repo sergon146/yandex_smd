@@ -13,6 +13,7 @@ public enum Screens {
     REPORT_SCREEN(TabBarScreens.REPORT),
     PROFILE_SCREEN(TabBarScreens.PROFILE),
     SETTINGS_SCREEN,
+    ADD_TRANSACTION,
     ABOUT_SCREEN;
 
     Screens(TabBarScreens tab) {

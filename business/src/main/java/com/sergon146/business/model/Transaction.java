@@ -33,6 +33,19 @@ public class Transaction {
         return transaction;
     }
 
+    public Transaction(OperationType type,
+                       Currency currency,
+                       BigDecimal amount,
+                       BigDecimal exchangeRate) {
+        this.uuid = UUID.randomUUID();
+        this.type = type;
+        this.currency = currency;
+        this.amount = amount;
+        this.exchangeRate = exchangeRate;
+        this.date = new Date();
+    }
+
+
     public Transaction(UUID uuid,
                        OperationType type,
                        Currency currency,

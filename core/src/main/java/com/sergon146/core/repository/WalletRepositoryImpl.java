@@ -13,9 +13,12 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 
 import io.reactivex.Observable;
+import io.reactivex.subjects.BehaviorSubject;
+import io.reactivex.subjects.Subject;
 
 public class WalletRepositoryImpl implements WalletRepository {
     private List<Wallet> wallets;
+    private Subject<List<Wallet>> walletsSubj = BehaviorSubject.create();
 
     public WalletRepositoryImpl() {
         wallets = getMockWallets();
@@ -23,7 +26,7 @@ public class WalletRepositoryImpl implements WalletRepository {
 
     @Override
     public Observable<List<Wallet>> getWallets() {
-        return Observable.just(wallets);
+        return walletsSubj;
     }
 
     @Override
@@ -58,8 +61,8 @@ public class WalletRepositoryImpl implements WalletRepository {
 
         wallets.add(rub);
         wallets.add(usd);
-        //wallets.add(rub1);
-        //wallets.add(usd1);
+        wallets.add(rub1);
+        wallets.add(usd1);
         //wallets.add(rub2);
         //wallets.add(usd2);
 

@@ -1,6 +1,7 @@
 package com.sergon146.mobilization18.ui.main;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
@@ -15,7 +16,9 @@ import com.sergon146.mobilization18.R;
 import com.sergon146.mobilization18.navigation.MainRouter;
 import com.sergon146.mobilization18.navigation.Screens;
 import com.sergon146.mobilization18.ui.base.BaseMvpActivity;
+import com.sergon146.mobilization18.ui.base.dialog.BaseDialogMvpFragment;
 import com.sergon146.mobilization18.ui.fragments.about.AboutFragment;
+import com.sergon146.mobilization18.ui.fragments.addtransaction.AddTransactionDialog;
 import com.sergon146.mobilization18.ui.fragments.balance.BalanceFragment;
 import com.sergon146.mobilization18.ui.fragments.settings.SettingsFragment;
 import com.sergon146.mobilization18.ui.fragments.transactions.TransactionsFragment;
@@ -51,6 +54,8 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
     View back;
     @BindView(R.id.title)
     TextView title;
+    @BindView(R.id.add_fab)
+    FloatingActionButton addFab;
 
     @Override
     @ProvidePresenter
@@ -135,6 +140,16 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
 
     @Override
     protected Fragment createFragment(String screenKey, Object data) {
+        Fragment fragment = createFragmentInternal(screenKey, data);
+        if (fragment instanceof BaseDialogMvpFragment) {
+            ((BaseDialogMvpFragment) fragment).show(getSupportFragmentManager(), screenKey);
+            return null;
+        }
+        return fragment;
+
+    }
+
+    private Fragment createFragmentInternal(String screenKey, Object data) {
         Screens screen = Screens.valueOf(screenKey);
         Fragment fragment;
         switch (screen) {
@@ -156,12 +171,15 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
             case ABOUT_SCREEN:
                 fragment = AboutFragment.getInstance();
                 break;
+            case ADD_TRANSACTION:
+                fragment = AddTransactionDialog.getInstance();
+                break;
             default:
                 throw new RuntimeException("Unknown screen");
         }
-
         return fragment;
     }
+
 
     @Override
     public void onBackStackChanged() {
@@ -189,4 +207,10 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
             activateScreen(name);
         }
     }
+
+    @OnClick(R.id.add_fab)
+    void onAddTransactionClick() {
+        getPresenter().showAddTransaction();
+    }
+
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.sergon146.business.model.Transaction;
 import com.sergon146.business.model.Wallet;
+import com.sergon146.business.model.types.TransactionCategory;
 import com.sergon146.mobilization18.R;
 
 public class ItemUtils {
@@ -26,9 +27,14 @@ public class ItemUtils {
         return type;
     }
 
-    public static String getTrasactionCategoryTitle(Context context, Transaction transaction) {
+    public static String getTransactionCategoryTitle(Context context, Transaction transaction) {
+        return getCategoryTitle(context, transaction.getCategory());
+    }
+
+    public static String getCategoryTitle(Context context,
+                                          TransactionCategory transactionCategory) {
         String category;
-        switch (transaction.getCategory()) {
+        switch (transactionCategory) {
             case CLOTHING:
                 category = context.getResources().getString(R.string.clothing);
                 break;

@@ -92,7 +92,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
             amount.setSymbol(item.getCurrency().getSymbol()
             );
             date.setText(SimpleDateFormat.getDateTimeInstance().format(item.getDate()));
-            category.setText(ItemUtils.getTrasactionCategoryTitle(itemView.getContext(), item));
+            category.setText(ItemUtils.getTransactionCategoryTitle(itemView.getContext(), item));
 
             card.setVisibility(View.GONE);
 

@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@drawable/main_gradient_bg</item>
+        <item name="editTextStyle">@style/WhiteEditText</item>
     </style>
 
     <style name="AppTheme.Launcher">
@@ -47,4 +48,38 @@
     <style name="ProgressBar" parent="AppTheme">
         <item name="colorAccent">@color/colorPrimary</item>
     </style>
+
+
+    <!--Operation type radio button-->
+    <style name="RadioIncome" parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:drawableTop">@drawable/radio_income</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="RadioExpanse" parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:drawableTop">@drawable/radio_expanse</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!--Operation type radio button-->
+
+    <!--White edit text-->
+    <style name="WhiteEditText" parent="@android:style/Widget.EditText">
+        <item name="android:background">@drawable/white_edit_text</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textCursorDrawable">@drawable/edit_cursor_white</item>
+    </style>
+    <!--White edit text-->
+
+
+    <style name="FullScreenDialog" parent="@android:style/Theme.Holo.Light">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
 </resources>
