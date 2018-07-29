@@ -16,6 +16,8 @@ public enum Screens {
     ADD_TRANSACTION,
     ABOUT_SCREEN;
 
+    public final TabBarScreens tab;
+
     Screens(TabBarScreens tab) {
         this.tab = tab;
     }
@@ -37,6 +39,4 @@ public enum Screens {
 
         return null;
     }
-
-    public final TabBarScreens tab;
 }

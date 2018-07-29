@@ -1,6 +1,7 @@
 package com.sergon146.business.contracts;
 
 import com.sergon146.business.model.Balance;
+import com.sergon146.business.model.ExchangeRate;
 import com.sergon146.business.model.Transaction;
 import com.sergon146.business.model.Wallet;
 
@@ -22,4 +23,6 @@ public interface BalanceUseCase {
     Observable<List<Transaction>> getTransactions();
 
     Observable<BigDecimal> getTransactionSum();
+
+    Observable<ExchangeRate> getExchangeRate();
 }

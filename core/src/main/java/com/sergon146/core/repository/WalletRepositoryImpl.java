@@ -22,6 +22,7 @@ public class WalletRepositoryImpl implements WalletRepository {
 
     public WalletRepositoryImpl() {
         wallets = getMockWallets();
+        walletsSubj.onNext(wallets);
     }
 
     @Override

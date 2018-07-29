@@ -2,6 +2,7 @@ package com.sergon146.mobilization18.di.features;
 
 import com.sergon146.business.contracts.BalanceUseCase;
 import com.sergon146.business.repository.BalanceRepository;
+import com.sergon146.business.repository.ExchageRepository;
 import com.sergon146.business.repository.TransactionRepository;
 import com.sergon146.business.repository.WalletRepository;
 import com.sergon146.business.usecase.BalanceUseCaseImpl;
@@ -17,8 +18,10 @@ public abstract class BalanceModule {
     @Provides
     static BalanceUseCase provideBalanceUseCase(BalanceRepository balanceRepository,
                                                 WalletRepository walletRepository,
-                                                TransactionRepository transactionRepository) {
-        return new BalanceUseCaseImpl(balanceRepository,  walletRepository, transactionRepository);
+                                                TransactionRepository transactionRepository,
+                                                ExchageRepository exchageRepository) {
+        return new BalanceUseCaseImpl(balanceRepository, walletRepository,
+                transactionRepository, exchageRepository);
     }
 
     @Provides

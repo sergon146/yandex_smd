@@ -22,7 +22,7 @@ public class AddTransactionModule {
 
     @Provides
     static AddTransactionPresenter provideAddTransactionPresenter(MainRouter router,
-                                                           AddTransactionUseCase useCase) {
+                                                                  AddTransactionUseCase useCase) {
         return new AddTransactionPresenter(router, useCase);
     }
 }

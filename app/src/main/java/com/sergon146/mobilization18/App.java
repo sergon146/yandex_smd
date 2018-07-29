@@ -60,8 +60,7 @@ public class App extends Application implements HasActivityInjector {
 
     private void initCore() {
         Resources res = getAppResources();
-        Core core = Core.initInstance(res.getString(R.string.pixbay_base_url),
-                res.getString(R.string.pixbay_api_key));
+        Core core = Core.initInstance(res.getString(R.string.exchange_base_url));
         core.initApi();
     }
 

@@ -39,14 +39,14 @@ public class TransactionsFragment extends BaseMvpFragment<TransactionsPresenter>
 
     private TransactionAdapter adapter;
 
+    public static TransactionsFragment getInstance() {
+        return new TransactionsFragment();
+    }
+
     @Override
     @ProvidePresenter
     protected TransactionsPresenter providePresenter() {
         return presenter;
-    }
-
-    public static TransactionsFragment getInstance() {
-        return new TransactionsFragment();
     }
 
     @Override

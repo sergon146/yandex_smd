@@ -57,14 +57,14 @@ public class AddTransactionDialog extends BaseDialogMvpFragment<AddTransactionPr
     @BindView(R.id.money_edit)
     EasyMoneyEditText moneyEdit;
 
+    public static AddTransactionDialog getInstance() {
+        return new AddTransactionDialog();
+    }
+
     @Override
     @ProvidePresenter
     public AddTransactionPresenter providePresenter() {
         return presenter;
-    }
-
-    public static AddTransactionDialog getInstance() {
-        return new AddTransactionDialog();
     }
 
     @Nullable

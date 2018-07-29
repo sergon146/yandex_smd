@@ -19,20 +19,6 @@ public class Transaction {
     private TransactionCategory category = TransactionCategory.OTHER;
     private Wallet wallet;
 
-    public static Transaction getRandomTransaction() {
-        Random random = new Random();
-        Transaction transaction = new Transaction(
-                UUID.randomUUID(),
-                OperationType.values()[random.nextInt(OperationType.values().length)],
-                Currency.values()[random.nextInt(Currency.values().length)],
-                BigDecimal.valueOf(random.nextDouble() * 5000),
-                BigDecimal.valueOf(random.nextDouble() * 60),
-                new Date());
-        transaction.setCategory(TransactionCategory.values()
-                [random.nextInt(TransactionCategory.values().length)]);
-        return transaction;
-    }
-
     public Transaction(OperationType type,
                        Currency currency,
                        BigDecimal amount,
@@ -44,7 +30,6 @@ public class Transaction {
         this.exchangeRate = exchangeRate;
         this.date = new Date();
     }
-
 
     public Transaction(UUID uuid,
                        OperationType type,
@@ -58,6 +43,7 @@ public class Transaction {
         this.exchangeRate = exchangeRate;
         this.date = new Date();
     }
+
 
     public Transaction(UUID uuid,
                        OperationType type,
@@ -71,6 +57,20 @@ public class Transaction {
         this.amount = amount;
         this.exchangeRate = exchangeRate;
         this.date = date;
+    }
+
+    public static Transaction getRandomTransaction() {
+        Random random = new Random();
+        Transaction transaction = new Transaction(
+                UUID.randomUUID(),
+                OperationType.values()[random.nextInt(OperationType.values().length)],
+                Currency.values()[random.nextInt(Currency.values().length)],
+                BigDecimal.valueOf(random.nextDouble() * 5000),
+                BigDecimal.valueOf(random.nextDouble() * 60),
+                new Date());
+        transaction.setCategory(TransactionCategory.values()
+                [random.nextInt(TransactionCategory.values().length)]);
+        return transaction;
     }
 
     public UUID getUuid() {
