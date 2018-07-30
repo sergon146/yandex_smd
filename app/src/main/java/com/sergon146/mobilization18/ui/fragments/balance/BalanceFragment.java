@@ -31,7 +31,6 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class BalanceFragment extends BaseMvpFragment<BalancePresenter>
         implements BalanceView, Injectable {
@@ -54,7 +53,7 @@ public class BalanceFragment extends BaseMvpFragment<BalancePresenter>
     private WalletFragmentAdapter walletAdapter;
     private int currentItemPos = Const.NONE;
 
-    public static BalanceFragment getInstance() {
+    public static BalanceFragment newInstance() {
         return new BalanceFragment();
     }
 
@@ -99,11 +98,6 @@ public class BalanceFragment extends BaseMvpFragment<BalancePresenter>
 
             }
         });
-    }
-
-    @OnClick(R.id.settings)
-    void onSettingsClick() {
-        getPresenter().showSettings();
     }
 
     @Override

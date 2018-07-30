@@ -7,7 +7,7 @@
     <string name="tab_feed">Лента</string>
     <string name="tab_transparent"> </string>
     <string name="tab_report">Отчёты</string>
-    <string name="tab_profile">Профиль</string>
+    <string name="tab_settings">Настройки</string>
     <!--Navigation-->
 
     <string name="total_balance">Общий баланс</string>
@@ -28,6 +28,7 @@
     <string name="about_version">Версия приложения: %1$s</string>
 
     <string name="add_transaction_title">Добавление операции</string>
+    <string name="report_title">Отчёт</string>
 
     <string name="balance_title">Кошелёк</string>
     <string name="settings_title">Настройки</string>

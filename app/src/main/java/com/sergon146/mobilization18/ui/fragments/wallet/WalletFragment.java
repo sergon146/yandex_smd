@@ -98,6 +98,7 @@ public class WalletFragment extends BaseMvpFragment<WalletPresenter>
 
     @Override
     public void showTransactions(List<Transaction> transactions) {
+        transactionAdapter.setShowWallet(false);
         transactionAdapter.setTransactions(transactions);
     }
 

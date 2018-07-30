@@ -20,6 +20,7 @@ import com.sergon146.mobilization18.ui.base.dialog.BaseDialogMvpFragment;
 import com.sergon146.mobilization18.ui.fragments.about.AboutFragment;
 import com.sergon146.mobilization18.ui.fragments.addtransaction.AddTransactionDialog;
 import com.sergon146.mobilization18.ui.fragments.balance.BalanceFragment;
+import com.sergon146.mobilization18.ui.fragments.report.ReportFragment;
 import com.sergon146.mobilization18.ui.fragments.settings.SettingsFragment;
 import com.sergon146.mobilization18.ui.fragments.transactions.TransactionsFragment;
 
@@ -40,16 +41,15 @@ import butterknife.OnClick;
 public class MainActivity extends BaseMvpActivity<MainPresenter>
         implements MainView, FragmentManager.OnBackStackChangedListener {
 
-    @BindView(R.id.tab_bar)
-    AHBottomNavigation tabBar;
-
-    @Inject
-    MainRouter router;
-
     @Inject
     @InjectPresenter
     MainPresenter presenter;
 
+    @Inject
+    MainRouter router;
+
+    @BindView(R.id.tab_bar)
+    AHBottomNavigation tabBar;
     @BindView(R.id.back)
     View back;
     @BindView(R.id.title)
@@ -154,25 +154,22 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
         Fragment fragment;
         switch (screen) {
             case MAIN_SCREEN:
-                fragment = BalanceFragment.getInstance();
+                fragment = BalanceFragment.newInstance();
                 break;
             case FEED_SCREEN:
-                fragment = TransactionsFragment.getInstance();
+                fragment = TransactionsFragment.newInstance();
                 break;
             case REPORT_SCREEN:
-                fragment = SettingsFragment.getInstance();
-                break;
-            case PROFILE_SCREEN:
-                fragment = AboutFragment.getInstance();
+                fragment = ReportFragment.newInstance();
                 break;
             case SETTINGS_SCREEN:
-                fragment = SettingsFragment.getInstance();
+                fragment = SettingsFragment.newInstance();
                 break;
             case ABOUT_SCREEN:
-                fragment = AboutFragment.getInstance();
+                fragment = AboutFragment.newInstance();
                 break;
             case ADD_TRANSACTION:
-                fragment = AddTransactionDialog.getInstance();
+                fragment = AddTransactionDialog.newInstance();
                 break;
             default:
                 throw new RuntimeException("Unknown screen");
@@ -212,5 +209,4 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
     void onAddTransactionClick() {
         getPresenter().showAddTransaction();
     }
-
 }

@@ -57,7 +57,7 @@ public class AddTransactionDialog extends BaseDialogMvpFragment<AddTransactionPr
     @BindView(R.id.money_edit)
     EasyMoneyEditText moneyEdit;
 
-    public static AddTransactionDialog getInstance() {
+    public static AddTransactionDialog newInstance() {
         return new AddTransactionDialog();
     }
 
