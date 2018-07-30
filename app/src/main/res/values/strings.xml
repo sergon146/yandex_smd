@@ -8,7 +8,7 @@
     <string name="tab_feed">Feed</string>
     <string name="tab_transparent"> </string>
     <string name="tab_report">Reports</string>
-    <string name="tab_profile">Profile</string>
+    <string name="tab_settings">Settings</string>
     <!--Navigation-->
 
     <!--General-->
@@ -45,6 +45,7 @@
     <string name="rubel_short">RUB</string>
 
     <string name="add_transaction_title">Add transaction</string>
+    <string name="report_title">Report</string>
 
     <!--Wallet type-->
     <string name="wallet_cash">Cash</string>

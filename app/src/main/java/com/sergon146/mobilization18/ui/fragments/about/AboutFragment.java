@@ -41,7 +41,7 @@ public class AboutFragment extends BaseMvpFragment<AboutPresenter>
 
     private RotateAnimation rotate;
 
-    public static AboutFragment getInstance() {
+    public static AboutFragment newInstance() {
         return new AboutFragment();
     }
 

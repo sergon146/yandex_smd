@@ -46,8 +46,8 @@ public class MainPresenter extends BasePresenter<MainView> {
             case REPORT:
                 getRouter().showNavMenu(Screens.REPORT_SCREEN);
                 break;
-            case PROFILE:
-                getRouter().showNavMenu(Screens.PROFILE_SCREEN);
+            case SETTINGS:
+                getRouter().showNavMenu(Screens.SETTINGS_SCREEN);
                 break;
             default:
         }

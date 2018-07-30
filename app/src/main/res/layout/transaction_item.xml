@@ -58,13 +58,13 @@
             android:gravity="end|center"
             android:textSize="20sp"
             app:amount="2324.44"
+            app:baseTextColor="@color/income"
             app:decimalDigitsTextSize="14sp"
             app:decimalGravity="bottom"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:symbol="₽"
             app:symbolGravity="start"
-            app:baseTextColor="@color/income"
             />
 
         <TextView

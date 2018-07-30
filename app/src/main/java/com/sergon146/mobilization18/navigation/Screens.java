@@ -11,8 +11,7 @@ public enum Screens {
     MAIN_SCREEN,
     FEED_SCREEN(TabBarScreens.FEED),
     REPORT_SCREEN(TabBarScreens.REPORT),
-    PROFILE_SCREEN(TabBarScreens.PROFILE),
-    SETTINGS_SCREEN,
+    SETTINGS_SCREEN(TabBarScreens.SETTINGS),
     ADD_TRANSACTION,
     ABOUT_SCREEN;
 

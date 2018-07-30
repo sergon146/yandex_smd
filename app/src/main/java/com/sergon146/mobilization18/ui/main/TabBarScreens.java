@@ -7,7 +7,7 @@ public enum TabBarScreens {
     FEED(R.string.tab_feed, R.drawable.ic_bag_inactive),
     EMPTY(R.string.tab_transparent, R.drawable.ic_transparent),
     REPORT(R.string.tab_report, R.drawable.ic_report_inactive),
-    PROFILE(R.string.tab_profile, R.drawable.ic_user_inactive);
+    SETTINGS(R.string.tab_settings, R.drawable.ic_settings);
 
     private int title;
     private int icon;

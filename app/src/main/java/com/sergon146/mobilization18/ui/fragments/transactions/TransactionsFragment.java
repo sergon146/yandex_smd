@@ -39,7 +39,7 @@ public class TransactionsFragment extends BaseMvpFragment<TransactionsPresenter>
 
     private TransactionAdapter adapter;
 
-    public static TransactionsFragment getInstance() {
+    public static TransactionsFragment newInstance() {
         return new TransactionsFragment();
     }
 
@@ -68,6 +68,7 @@ public class TransactionsFragment extends BaseMvpFragment<TransactionsPresenter>
 
     @Override
     public void showTransactions(List<Transaction> transactions) {
+        adapter.setShowWallet(true);
         adapter.setTransactions(transactions);
     }
 

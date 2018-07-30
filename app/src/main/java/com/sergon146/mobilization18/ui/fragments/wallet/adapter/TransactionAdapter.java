@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.sergon146.business.model.Transaction;
-import com.sergon146.business.model.Wallet;
 import com.sergon146.business.model.types.OperationType;
 import com.sergon146.mobilization18.R;
 import com.sergon146.mobilization18.util.ItemUtils;
@@ -25,7 +24,7 @@ import butterknife.ButterKnife;
 public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.BalanceViewHolder> {
 
     private List<Transaction> transactionList = new ArrayList<>();
-    private List<Wallet> walletList = new ArrayList<>();
+    private boolean isShowWallet = false;
 
     @NonNull
     @Override
@@ -49,6 +48,10 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         this.transactionList.clear();
         this.transactionList.addAll(transactions);
         notifyDataSetChanged();
+    }
+
+    public void setShowWallet(boolean showWallet) {
+        this.isShowWallet = showWallet;
     }
 
     class BalanceViewHolder extends RecyclerView.ViewHolder {
@@ -96,7 +99,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
 
             card.setVisibility(View.GONE);
 
-            if (item.getWallet() != null) {
+            if (item.getWallet() != null && isShowWallet) {
                 card.setText(item.getWallet().getName());
                 card.setVisibility(View.VISIBLE);
             }

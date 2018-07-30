@@ -28,7 +28,7 @@ public class App extends Application implements HasActivityInjector {
     @Inject
     DispatchingAndroidInjector<Activity> activityInjector;
 
-    public static App getInstance() {
+    public static App newInstance() {
         return instance;
     }
 
