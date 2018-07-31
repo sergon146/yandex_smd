@@ -10,10 +10,6 @@ import ru.terrakok.cicerone.commands.Command;
 import ru.terrakok.cicerone.commands.Forward;
 import ru.terrakok.cicerone.commands.Replace;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 15.04.2018
- */
 public class MainRouter extends BaseRouter {
     private Navigator navigator;
 

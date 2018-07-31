@@ -3,7 +3,12 @@ package com.sergon146.mobilization18.ui.components;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
-
+/**
+ * Zoom in/out page transformer for ViewPager
+ * From: https://gist.github.com/xalexchen/9423660
+ *
+ * @author xalexchen
+ */
 public class ZoomOutPageTransformer implements ViewPager.PageTransformer {
     private static final float MIN_SCALE = 0.85f;
     private static final float MIN_ALPHA = 0.5f;

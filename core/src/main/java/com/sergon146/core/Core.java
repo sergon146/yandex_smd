@@ -22,10 +22,6 @@ import retrofit2.Converter;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 15.04.2018
- */
 
 public class Core {
     private static Core instance;

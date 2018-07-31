@@ -21,10 +21,6 @@ import ru.terrakok.cicerone.NavigatorHolder;
 import ru.terrakok.cicerone.commands.BackTo;
 import ru.terrakok.cicerone.commands.Command;
 
-/**
- * Created by Sergon146 on 08.04.2018.
- * sergon146@gmail.com
- */
 
 public abstract class BaseMvpActivity<Presenter extends BasePresenter> extends InjectableActivity
         implements BaseMvpView {

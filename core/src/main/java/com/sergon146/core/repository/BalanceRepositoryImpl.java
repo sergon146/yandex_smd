@@ -12,10 +12,6 @@ import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
 import io.reactivex.subjects.Subject;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 15.04.2018
- */
 
 public class BalanceRepositoryImpl implements BalanceRepository {
 

@@ -23,10 +23,6 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 10.04.2018
- */
 public class TransactionsFragment extends BaseMvpFragment<TransactionsPresenter>
         implements TransactionsView {
 

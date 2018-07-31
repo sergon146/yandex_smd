@@ -33,11 +33,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 08.04.2018
- */
-
 public class MainActivity extends BaseMvpActivity<MainPresenter>
         implements MainView, FragmentManager.OnBackStackChangedListener {
 
@@ -57,6 +52,8 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
     @BindView(R.id.add_fab)
     FloatingActionButton addFab;
 
+    private FragmentManager fragmentManager;
+
     @Override
     @ProvidePresenter
     protected MainPresenter providePresenter() {
@@ -66,10 +63,11 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        fragmentManager = getSupportFragmentManager();
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        getSupportFragmentManager().addOnBackStackChangedListener(this);
+        fragmentManager.addOnBackStackChangedListener(this);
         shouldDisplayBack();
 
         if (savedInstanceState == null) {
@@ -83,12 +81,11 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
         getPresenter().showInitialScreen();
     }
 
-
     @Override
     protected void activateScreen(String name) {
         super.activateScreen(name);
 
-        FragmentManager fm = getSupportFragmentManager();
+        FragmentManager fm = fragmentManager;
         fm.executePendingTransactions();
 
         // display only root screen in tab
@@ -142,7 +139,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
     protected Fragment createFragment(String screenKey, Object data) {
         Fragment fragment = createFragmentInternal(screenKey, data);
         if (fragment instanceof BaseDialogMvpFragment) {
-            ((BaseDialogMvpFragment) fragment).show(getSupportFragmentManager(), screenKey);
+            ((BaseDialogMvpFragment) fragment).show(fragmentManager, screenKey);
             return null;
         }
         return fragment;
@@ -184,8 +181,8 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
     }
 
     public void shouldDisplayBack() {
-        boolean canback = getSupportFragmentManager().getBackStackEntryCount() > 1;
-        back.setVisibility(canback ? View.VISIBLE : View.GONE);
+        boolean canBack = fragmentManager.getBackStackEntryCount() > 1;
+        back.setVisibility(canBack ? View.VISIBLE : View.GONE);
     }
 
     @OnClick(R.id.back)
@@ -195,12 +192,12 @@ public class MainActivity extends BaseMvpActivity<MainPresenter>
 
     @Override
     public void onBackPressed() {
-        if (getSupportFragmentManager().getBackStackEntryCount() <= 1) {
+        int entryCount = fragmentManager.getBackStackEntryCount();
+        if (entryCount <= 1) {
             finish();
         } else {
             super.onBackPressed();
-            int count = getSupportFragmentManager().getBackStackEntryCount();
-            String name = getSupportFragmentManager().getBackStackEntryAt(count - 1).getName();
+            String name = fragmentManager.getBackStackEntryAt(entryCount - 1).getName();
             activateScreen(name);
         }
     }

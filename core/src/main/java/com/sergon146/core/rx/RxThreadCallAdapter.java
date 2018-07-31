@@ -12,12 +12,6 @@ import retrofit2.CallAdapter;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
-/**
- * Адаптер вызовов ретрофита, подписывает на io треде
- *
- * @author Sergon146 (sergon146@gmail.com).
- * @since 15.04.2018
- */
 public class RxThreadCallAdapter extends CallAdapter.Factory {
 
     private RxJava2CallAdapterFactory rxFactory = RxJava2CallAdapterFactory.create();

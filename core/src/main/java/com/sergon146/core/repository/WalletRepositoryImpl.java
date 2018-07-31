@@ -64,9 +64,6 @@ public class WalletRepositoryImpl implements WalletRepository {
         wallets.add(usd);
         wallets.add(rub1);
         wallets.add(usd1);
-        //wallets.add(rub2);
-        //wallets.add(usd2);
-
         return wallets;
     }
 }

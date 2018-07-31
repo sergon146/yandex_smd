@@ -9,10 +9,6 @@ import dagger.Provides;
 import ru.terrakok.cicerone.Cicerone;
 import ru.terrakok.cicerone.NavigatorHolder;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 15.04.2018
- */
 
 @Module
 public class NavigationModule {

@@ -19,10 +19,6 @@ import dagger.android.AndroidInjection;
 import dagger.android.support.AndroidSupportInjection;
 import dagger.android.support.HasSupportFragmentInjector;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 15.04.2018
- */
 
 public class AppInjector {
     private static final ScreenNavigateLogger logger = new ScreenNavigateLogger();

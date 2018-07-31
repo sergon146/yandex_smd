@@ -10,21 +10,21 @@ import com.sergon146.mobilization18.R;
 public class ItemUtils {
 
     public static String getWalletTypeTitle(Context context, Wallet wallet) {
-        String type;
+        int titleId;
         switch (wallet.getType()) {
             case CASH:
-                type = context.getString(R.string.wallet_cash);
+                titleId = R.string.wallet_cash;
                 break;
             case DEBIT_CARD:
-                type = context.getString(R.string.wallet_debit_card);
+                titleId = R.string.wallet_debit_card;
                 break;
             case CREDIT_CARD:
-                type = context.getString(R.string.wallet_credit_card);
+                titleId = R.string.wallet_credit_card;
                 break;
             default:
-                type = "";
+                return "";
         }
-        return type;
+        return context.getString(titleId);
     }
 
     public static String getTransactionCategoryTitle(Context context, Transaction transaction) {
@@ -33,29 +33,29 @@ public class ItemUtils {
 
     public static String getCategoryTitle(Context context,
                                           TransactionCategory transactionCategory) {
-        String category;
+        int titleId;
         switch (transactionCategory) {
             case CLOTHING:
-                category = context.getResources().getString(R.string.clothing);
+                titleId = R.string.clothing;
                 break;
             case COMMUNAL:
-                category = context.getResources().getString(R.string.communal);
+                titleId = R.string.communal;
                 break;
             case EATING:
-                category = context.getResources().getString(R.string.eating);
+                titleId = R.string.eating;
                 break;
             case PRODUCTS:
-                category = context.getResources().getString(R.string.products);
+                titleId = R.string.products;
                 break;
             case TRANSPORT:
-                category = context.getResources().getString(R.string.transport);
+                titleId = R.string.transport;
                 break;
             case OTHER:
-                category = context.getResources().getString(R.string.other);
+                titleId = R.string.other;
                 break;
             default:
-                category = "";
+                return "";
         }
-        return category;
+        return context.getString(titleId);
     }
 }

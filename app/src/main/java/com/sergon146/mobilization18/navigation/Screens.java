@@ -2,10 +2,6 @@ package com.sergon146.mobilization18.navigation;
 
 import com.sergon146.mobilization18.ui.main.TabBarScreens;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 15.04.2018
- */
 
 public enum Screens {
     MAIN_SCREEN,

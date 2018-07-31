@@ -13,7 +13,6 @@ public class ExchangeRate {
         String val = outPut.substring(outPut.lastIndexOf(':') + 1, outPut.length() - 1);
         this.exchageRate = BigDecimal.valueOf(Double.valueOf(val));
     }
-    ////{"USD_RUB":62.7771}
 
     public String getIn() {
         return in;

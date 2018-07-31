@@ -22,11 +22,6 @@ import dagger.Module;
 import dagger.Provides;
 import dagger.android.ContributesAndroidInjector;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 10.04.2018
- */
-
 @Module
 public abstract class AppModule {
 

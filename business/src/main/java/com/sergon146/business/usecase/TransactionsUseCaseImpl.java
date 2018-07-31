@@ -10,11 +10,6 @@ import java.util.Random;
 
 import io.reactivex.Observable;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 10.04.2018
- */
-
 public class TransactionsUseCaseImpl implements TransactionsUseCase {
     private final TransactionRepository transactionRepository;
     private final WalletRepository walletRepository;

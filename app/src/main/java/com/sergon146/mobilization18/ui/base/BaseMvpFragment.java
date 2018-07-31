@@ -12,11 +12,6 @@ import com.sergon146.mobilization18.R;
 import com.sergon146.mobilization18.di.base.Injectable;
 import com.sergon146.mobilization18.di.base.InjectableFragment;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 08.04.2018
- */
-
 public abstract class BaseMvpFragment<Presenter extends BasePresenter> extends InjectableFragment
         implements BaseMvpView, Injectable, LogNamed {
 
