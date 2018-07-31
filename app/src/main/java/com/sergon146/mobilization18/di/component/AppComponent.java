@@ -13,10 +13,6 @@ import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.support.AndroidSupportInjectionModule;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 15.04.2018
- */
 @Singleton
 @Component(modules = {AndroidSupportInjectionModule.class, AppModule.class, NavigationModule.class})
 public interface AppComponent {

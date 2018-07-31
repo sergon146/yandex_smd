@@ -10,11 +10,6 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 08.04.2018
- */
-
 public abstract class InjectableFragment extends MvpAppCompatFragment
         implements HasSupportFragmentInjector {
     @Inject

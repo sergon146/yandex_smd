@@ -9,6 +9,7 @@ import com.sergon146.core.repository.TransactionRepositoryImpl;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -28,27 +29,26 @@ public class TransactionRepositoryModule {
         List<Transaction> transactions = new ArrayList<>();
 
         //plus
-        transactions.add(new Transaction(UUID.randomUUID(), OperationType.INPUT,
-                Currency.RUBLE, 5000, 1));
-        transactions.add(new Transaction(UUID.randomUUID(), OperationType.INPUT,
-                Currency.RUBLE, 5000, 1));
-
-        repo.getTransactionSum(transactions).test().assertValue(10000L);
+        transactions.add(new Transaction(UUID.randomUUID(), OperationType.INCOME,
+                Currency.RUBLE, BigDecimal.valueOf(5000), BigDecimal.valueOf(1)));
+        transactions.add(new Transaction(UUID.randomUUID(), OperationType.INCOME,
+                Currency.RUBLE, BigDecimal.valueOf(5000), BigDecimal.valueOf(1)));
+        repo.getTransactionSum(transactions).test().assertValue(BigDecimal.valueOf(10000));
 
         //minus
-        transactions.add(new Transaction(UUID.randomUUID(), OperationType.OUTPUT,
-                Currency.RUBLE, 5000, 1));
-        repo.getTransactionSum(transactions).test().assertValue(5000L);
+        transactions.add(new Transaction(UUID.randomUUID(), OperationType.EXPENSE,
+                Currency.RUBLE, BigDecimal.valueOf(5000), BigDecimal.valueOf(1)));
+        repo.getTransactionSum(transactions).test().assertValue(BigDecimal.valueOf(5000));
 
 
         //exchange plus
-        transactions.add(new Transaction(UUID.randomUUID(), OperationType.INPUT,
-                Currency.DOLLAR, 5000, 0.5));
-        repo.getTransactionSum(transactions).test().assertValue(15000L);
+        transactions.add(new Transaction(UUID.randomUUID(), OperationType.INCOME,
+                Currency.DOLLAR, BigDecimal.valueOf(5000), BigDecimal.valueOf(0.5)));
+        repo.getTransactionSum(transactions).test().assertValue(BigDecimal.valueOf(15000));
 
         //exchange plus
-        transactions.add(new Transaction(UUID.randomUUID(), OperationType.OUTPUT,
-                Currency.DOLLAR, 5000, 0.5));
-        repo.getTransactionSum(transactions).test().assertValue(5000L);
+        transactions.add(new Transaction(UUID.randomUUID(), OperationType.EXPENSE,
+                Currency.DOLLAR, BigDecimal.valueOf(5000), BigDecimal.valueOf(0.5)));
+        repo.getTransactionSum(transactions).test().assertValue(BigDecimal.valueOf(5000));
     }
 }

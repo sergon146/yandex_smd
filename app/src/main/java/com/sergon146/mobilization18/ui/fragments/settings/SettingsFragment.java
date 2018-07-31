@@ -30,7 +30,7 @@ public class SettingsFragment extends BaseMvpFragment<SettingsPresenter>
     @InjectPresenter
     SettingsPresenter presenter;
 
-    public static SettingsFragment getInstance() {
+    public static SettingsFragment newInstance() {
         return new SettingsFragment();
     }
 

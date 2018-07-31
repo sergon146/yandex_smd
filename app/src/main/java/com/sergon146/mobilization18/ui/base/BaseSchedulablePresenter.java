@@ -15,8 +15,6 @@ import io.reactivex.disposables.Disposable;
  * Базовый класс для любого презентера. Реализует:
  * - процесс наблюдения и отписки от потока {@link #bind}
  * - управление потоком вывода результата {@link #onUi}
- * Created by Sergon146 on 08.04.2018.
- * sergon146@gmail.com
  */
 public abstract class BaseSchedulablePresenter<View extends MvpView> extends MvpPresenter<View> {
     private final CompositeDisposable viewDisposable = new CompositeDisposable();

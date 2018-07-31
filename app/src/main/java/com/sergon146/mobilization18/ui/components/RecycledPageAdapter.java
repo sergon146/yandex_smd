@@ -8,14 +8,9 @@ import android.view.ViewGroup;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 19.04.2018
- */
-
 public abstract class RecycledPageAdapter<VH extends RecycledPageAdapter.ViewHolder>
         extends PagerAdapter {
-    Queue<VH> destroyedItems = new LinkedList<>();
+    private Queue<VH> destroyedItems = new LinkedList<>();
 
     @NonNull
     @Override

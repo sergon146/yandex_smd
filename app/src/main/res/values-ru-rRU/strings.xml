@@ -2,18 +2,33 @@
     <string name="app_name">Pokecoin</string>
     <string name="about_title">Pokecoin - Ваш финансовый трекер</string>
 
-    <string name="connection_error">Отсутствует подключение к Сети Интернет!</string>
+    <!--Navigation-->
+    <string name="tab_main">Главная</string>
+    <string name="tab_feed">Лента</string>
+    <string name="tab_transparent"> </string>
+    <string name="tab_report">Отчёты</string>
+    <string name="tab_settings">Настройки</string>
+    <!--Navigation-->
 
+    <string name="total_balance">Общий баланс</string>
+
+    <!--General-->
+    <string name="connection_error">Отсутствует подключение к Сети Интернет!</string>
     <string name="loading_error">При загрузке произошла ошибка</string>
+    <string name="done">Готово</string>
+    <string name="cancel">Отмена</string>
+    <!--General-->
+
     <string name="empty_operations">На данный момент операции отсутствуют!</string>
 
     <string name="current_balance">Текущий баланс:</string>
-    <string name="currency_value">%1$s %2$s</string>
 
     <string name="default_wallet">Основная валюта</string>
 
     <string name="about_version">Версия приложения: %1$s</string>
 
+    <string name="add_transaction_title">Добавление операции</string>
+    <string name="report_title">Отчёт</string>
 
     <string name="balance_title">Кошелёк</string>
     <string name="settings_title">Настройки</string>
@@ -25,9 +40,45 @@
     <string name="mail_apps_not_available">Нет доступных приложений для отправки письма</string>
 
 
-
+    <string name="balance">Баланс</string>
     <string name="copytight_this_year">Copyright 2018 © sergon146</string>
     <string name="copytight">Copyright 2018–%1$d © sergon146</string>
 
     <string name="rubel_short">RUB</string>
+
+    <!--Wallet type-->
+    <string name="wallet_cash">Наличные</string>
+    <string name="wallet_debit_card">Дебетовая карта</string>
+    <string name="wallet_credit_card">Кредитная карта</string>
+    <!--Wallet type-->
+
+    <!--Operation type-->
+    <string name="income">Доход</string>
+    <string name="expense">Расход</string>
+    <!--Operation type-->
+
+
+    <!--Transaction category-->
+    <string name="products">Продукты</string>
+    <string name="communal">Комунальные платежи</string>
+    <string name="transport">Транспорт</string>
+    <string name="eating">Питание</string>
+    <string name="clothing">Одежда</string>
+    <string name="other">Другое</string>
+    <!--Transaction category-->
+
+    <!--Add transaction screen-->
+    <string name="amount_title">Сумма</string>
+    <string name="operation_title">Тип операции</string>
+    <string name="currency_title">Валюта</string>
+    <string name="category_title">Категория</string>
+    <string name="wallet_title">Кошелёк</string>
+    <string name="empty_amount_toast">Сумма не может быть равно нулю!</string>
+    <!--Add transaction screen-->
+
+    <!--Utils-->
+    <string name="currency_value">%1$s %2$s</string>
+    <string name="amount">%1$s %2$s</string>
+    <string name="details">%1$s (%2$s)</string>
+    <!--Utils-->
 </resources>
