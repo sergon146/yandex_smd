@@ -4,11 +4,6 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 29.04.2018
- */
-
 public class NetworkUtil {
 
     /**

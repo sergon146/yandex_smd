@@ -17,21 +17,33 @@ public class BalancePresenter extends BasePresenter<BalanceView> {
     }
 
     @Override
-    public void attachView(BalanceView view) {
-        super.attachView(view);
+    protected void onFirstViewAttach() {
+        super.onFirstViewAttach();
+
         bind(onUi(useCase.getBalance()).subscribe(bal ->
                 getViewState().showBalance(bal)));
 
-        bind(onUi(useCase.getTransactionSum()).subscribe(sum -> Log.d(getScreenTag(),
-                String.format("Transaction sum: %1$d", sum))));
+        bind(onUi(useCase.getWallets()).subscribe(wallets ->
+                getViewState().showWallets(wallets)));
+
+        getExchangeRate();
+    }
+
+    public void showSettings() {
+        getRouter().showSettingsScreen();
+    }
+
+    public void getExchangeRate() {
+        bind(onUi(useCase.getExchangeRate()).subscribe(rate -> {
+                    String exchanger = rate.getIn() + " - " + rate.getOut() + " = " +
+                            rate.getExchageRate().toPlainString();
+                    Log.i(getScreenTag(), exchanger);
+                },
+                t -> Log.e(getScreenTag(), t.getMessage())));
     }
 
     @Override
     protected String getScreenTag() {
         return "BalancePresenter";
-    }
-
-    public void showSettings() {
-        getRouter().showSettingsScreen();
     }
 }

@@ -12,13 +12,13 @@ import dagger.Provides;
 public abstract class AboutModule {
 
     @Provides
-    static SettingsUseCase provideBalanceUseCase() {
+    static SettingsUseCase provideSettingsUseCase() {
         return new SettingsUseCaseImpl();
     }
 
     @Provides
-    static AboutPresenter provideBalancePresenter(MainRouter router,
-                                                  SettingsUseCase useCase) {
+    static AboutPresenter provideAboutPresenter(MainRouter router,
+                                                SettingsUseCase useCase) {
         return new AboutPresenter(router, useCase);
     }
 }

@@ -10,10 +10,6 @@ import com.google.gson.Gson;
 import ru.terrakok.cicerone.android.SupportAppNavigator;
 import ru.terrakok.cicerone.commands.Command;
 
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 15.04.2018
- */
 public abstract class BaseNavigator extends SupportAppNavigator {
 
     public static final String TAG = BaseNavigator.class.getSimpleName();

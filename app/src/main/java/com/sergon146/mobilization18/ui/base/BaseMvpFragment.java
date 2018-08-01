@@ -6,17 +6,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.widget.Toast;
 
 import com.sergon146.mobilization18.R;
 import com.sergon146.mobilization18.di.base.Injectable;
 import com.sergon146.mobilization18.di.base.InjectableFragment;
-
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 08.04.2018
- */
 
 public abstract class BaseMvpFragment<Presenter extends BasePresenter> extends InjectableFragment
         implements BaseMvpView, Injectable, LogNamed {
@@ -55,9 +49,9 @@ public abstract class BaseMvpFragment<Presenter extends BasePresenter> extends I
 
     @Override
     public void setActionBarTitle(String title) {
-        FragmentActivity activity = getActivity();
+        BaseMvpActivity activity = (BaseMvpActivity) getActivity();
         if (activity != null) {
-            activity.setTitle(title);
+            activity.setActionBarTitle(title);
         }
     }
 

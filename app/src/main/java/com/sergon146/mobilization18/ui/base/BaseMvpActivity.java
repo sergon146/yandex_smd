@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.widget.Toast;
 
 import com.sergon146.mobilization18.App;
@@ -11,16 +12,15 @@ import com.sergon146.mobilization18.R;
 import com.sergon146.mobilization18.di.base.InjectableActivity;
 import com.sergon146.mobilization18.navigation.BaseNavigator;
 import com.sergon146.mobilization18.navigation.MainRouter;
+import com.sergon146.mobilization18.navigation.commands.BackToRoot;
 
 import javax.inject.Inject;
 
 import ru.terrakok.cicerone.Navigator;
 import ru.terrakok.cicerone.NavigatorHolder;
+import ru.terrakok.cicerone.commands.BackTo;
+import ru.terrakok.cicerone.commands.Command;
 
-/**
- * Created by Sergon146 on 08.04.2018.
- * sergon146@gmail.com
- */
 
 public abstract class BaseMvpActivity<Presenter extends BasePresenter> extends InjectableActivity
         implements BaseMvpView {
@@ -39,6 +39,27 @@ public abstract class BaseMvpActivity<Presenter extends BasePresenter> extends I
                 return BaseMvpActivity.this.createFragment(screenKey, data);
             } else {
                 return null;
+            }
+        }
+
+        @Override
+        public void applyCommand(Command command) {
+            super.applyCommand(command);
+
+            if (command instanceof BackToRoot) {
+                FragmentManager fm = getSupportFragmentManager();
+                if (fm.getBackStackEntryCount() > 1) {
+                    super.applyCommand(new BackTo(fm.getBackStackEntryAt(0).getName()));
+                }
+            }
+
+            // activate top fragment in the tabbar
+            FragmentManager fm = getSupportFragmentManager();
+            fm.executePendingTransactions();
+            int count = fm.getBackStackEntryCount();
+            if (count > 0) {
+                String name = fm.getBackStackEntryAt(count - 1).getName();
+                activateScreen(name);
             }
         }
     };
@@ -60,7 +81,6 @@ public abstract class BaseMvpActivity<Presenter extends BasePresenter> extends I
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         presenter = providePresenter();
-
         navigateInjector.router.setNavigator(navigator);
     }
 
@@ -108,6 +128,10 @@ public abstract class BaseMvpActivity<Presenter extends BasePresenter> extends I
 
     @Override
     public void connectionRestore() {
+
+    }
+
+    protected void activateScreen(String name) {
 
     }
 

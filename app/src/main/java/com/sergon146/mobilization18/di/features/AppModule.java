@@ -5,11 +5,15 @@ import android.content.Context;
 import android.content.res.Resources;
 
 import com.sergon146.business.repository.BalanceRepository;
+import com.sergon146.business.repository.ExchageRepository;
 import com.sergon146.business.repository.TransactionRepository;
+import com.sergon146.business.repository.WalletRepository;
 import com.sergon146.core.Core;
 import com.sergon146.core.api.ApiService;
 import com.sergon146.core.repository.BalanceRepositoryImpl;
+import com.sergon146.core.repository.ExchageRepositoryImpl;
 import com.sergon146.core.repository.TransactionRepositoryImpl;
+import com.sergon146.core.repository.WalletRepositoryImpl;
 import com.sergon146.mobilization18.ui.main.MainActivity;
 
 import javax.inject.Singleton;
@@ -17,11 +21,6 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import dagger.android.ContributesAndroidInjector;
-
-/**
- * @author Sergon146 (sergon146@gmail.com).
- * @since 10.04.2018
- */
 
 @Module
 public abstract class AppModule {
@@ -54,6 +53,18 @@ public abstract class AppModule {
     @Provides
     static TransactionRepository provideTransactionRepository(ApiService apiService) {
         return new TransactionRepositoryImpl(apiService);
+    }
+
+    @Singleton
+    @Provides
+    static WalletRepository provideWalletRepository() {
+        return new WalletRepositoryImpl();
+    }
+
+    @Singleton
+    @Provides
+    static ExchageRepository provideExchangeRepository(ApiService apiService) {
+        return new ExchageRepositoryImpl(apiService);
     }
 
     @ContributesAndroidInjector(modules = {MainModule.class})

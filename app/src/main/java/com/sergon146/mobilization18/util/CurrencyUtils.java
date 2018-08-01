@@ -1,15 +1,26 @@
 package com.sergon146.mobilization18.util;
 
+import android.content.res.Resources;
+
+import com.sergon146.business.model.Balance;
+import com.sergon146.business.model.types.Currency;
+import com.sergon146.mobilization18.R;
+
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+
 public class CurrencyUtils {
 
-    public static double round(double value, int places) {
-        if (places < 0) {
-            throw new IllegalArgumentException();
-        }
+    public static String getAmoutText(BigDecimal amount) {
+        DecimalFormat decimalFormat = new DecimalFormat("#.00");
+        return decimalFormat.format(amount);
+    }
 
-        long factor = (long) Math.pow(10, places);
-        value = value * factor;
-        long tmp = Math.round(value);
-        return (double) tmp / factor;
+    public static String getBalanceText(Resources res, Balance balance) {
+        return getBalanceText(res, balance.getCurrency(), balance.getAmount());
+    }
+
+    public static String getBalanceText(Resources res, Currency currency, BigDecimal amount) {
+        return res.getString(R.string.amount, currency.getSymbol(), getAmoutText(amount));
     }
 }
